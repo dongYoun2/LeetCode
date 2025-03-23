@@ -5,9 +5,9 @@
 # SC: O(1)
 # Solving the problem with the above complexities was required from the problem statement.
 
-# Since the array is sorted, I assumed that I had to use binary search somehow. (If it's not sorted, I believe the XOR bitwise solution could solve the problem in O(n) time complexity and O(1) space complexity.) The core idea is to how decide whether the single element is in the left subarray or right subarray after bisecting based on the med point.
+# Since the array is sorted, I assumed that I had to use binary search somehow. (If it's not sorted, I believe the XOR bitwise solution could solve the problem in O(n) time complexity and O(1) space complexity.) The core idea is to how to decide whether the single element is in the left subarray or right subarray after bisecting based on the med point.
 
-# cf.) At first, I forgot to consider the `med` is the exact matching single element.
+# cf.) At first, I forgot to consider the case where the `med` is the exact matching single element.
 
 class Solution:
     def singleNonDuplicate(self, nums: List[int]) -> int:
