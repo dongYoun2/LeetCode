@@ -10,7 +10,7 @@
 
 # Turning back to the DP algorithm, I found out that the word chain for the current word can be constructed by adding this word to any word chain with the last word's length as the `len(current_word) - 1` (Need to check only these words). Therefore, this can be stored in a hash map where the "key" is the word length, and the "value" is the tuple of 1) the word itself and 2) the maximum length of the word chain.
 
-# To check whether the potential predecessors (words that have length as len(current_word) - 1) are actual predecessors of the current word, I used a two-pointer algorithm, which has a time complexity of O(L). In this setting, by keeping track of the maximum length of the word chain, the answer could be found.
+# To check whether the potential predecessors (all previous words with length len(current_word) - 1) are actual predecessors of the current word, I used a two-pointer algorithm, which has a time complexity of O(L). In this setting, by keeping track of the maximum length of the word chain, the answer could be found.
 
 # However, this solution is suboptimal when there exist many words of the same length. In this case, the hasp map is skewed — leading to the worst-case time complexity, O(N^2*L).
 
