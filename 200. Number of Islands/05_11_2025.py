@@ -3,8 +3,8 @@
 
 # 10 min
 # runtime: 274 ms, memory: 20.6 MB
-# TC: O(m * n), where m is the number of rows and n is the number of columns in the grid.
-# SC: O(m * n)
+# TC: O(mn), where m is the number of rows and n is the number of columns in the grid.
+# SC: O(2mn) -> O(mn) (for the visited array and the recursion stack)
 
 # From LeetCode Top Interview 150 - Graph General
 
