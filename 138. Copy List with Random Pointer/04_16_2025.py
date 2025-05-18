@@ -5,7 +5,7 @@
 # TC: O(n + n) -> O(n), where n is the number of nodes
 # SC: O(n + n) -> O(n) (for `node_to_idx` and `cp_node_list`)
 
-# From LeetCode Top Interview 150 - Linekd List
+# From LeetCode Top Interview 150 - Linked List
 
 
 # I think the most important idea is how to copy the random pointers. Since random pointers that I need to copy may not be copied yet, I used a dictionary to map the node address to the index in the linked list during the first pass. Then, I was able to use this hash table to assign the random pointers of the copied nodes in the second pass.
