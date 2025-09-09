@@ -6,7 +6,7 @@
 # SC: O(1) (output space not considered)
 # Although a nested loop is used, the time complexity is O(n).
 
-# Felt like a simulation problem. I think finding the pattern is the core of this problem.
+# Felt like a simulation problem (but the approach below is actually arithmetic approach based on the index-based calculation). I think finding the pattern is the core of this problem.
 
 # At first, I thought all rows had the same offset. However, due to the nature of the zigzag pattern, each row has different offsets, and they alternate within the row except for the first and last rows.
 
