@@ -1,7 +1,7 @@
 # problem: https://leetcode.com/problems/longest-consecutive-sequence/
 # submission: https://leetcode.com/problems/longest-consecutive-sequence/submissions/1600160547/
 
-# 54 min (includes write memory limit exceeded code (04_07_2025_mle.py))
+# 54 min (includes writing memory limit exceeded code (04_07_2025_mle.py))
 # TC: O(n), where n is the number of elements in nums
 # SC: O(n)
 
