@@ -4,7 +4,9 @@
 
 I think this approach has the most clean and readable code. Although the second code uses $O(1)$ space, this code is more readable. Since execution time is a bigger deal than memory usage (and linear space is manageable), faster and more readable code is preferred. Moreover, while this and the second approach have the same time complexity, in practice, this approach executes twice as much faster. I believe this is due to the number of passes in the code.
 
-- [Submission](https://leetcode.com/problems/set-matrix-zeroes/)
+Moreover, this code solves the problem in two passes, unlike `09_17_2025_follow_up_1.py` which solves the problem in three passes.
+
+- [Submission](https://leetcode.com/problems/set-matrix-zeroes/submissions/1595825601/)
 - TC: $O(mn)$
 - SC: $O(m+n)$
 
@@ -33,45 +35,52 @@ class Solution:
 <br>
 
 
-## LeetCode Editorial's Approach 2: O(1) Space, Efficient Solution
+## Solution for the Follow-up Question 2: O(1) Space, Efficient Solution
 
-- [Submission](https://leetcode.com/problems/set-matrix-zeroes/) (submitted to compare the complexity)
+The logic is as follows:
+1. First pass: remember which rows/cols must be zero using the first row/col as marker storage.
+2. Second pass: zero all non-first-row/col cells based on those markers.
+3. Finally: handle whether the first row/col themselves should be zeroed, tracked by two booleans.
+
+- [Submission](https://leetcode.com/problems/set-matrix-zeroes/submissions/1774978805/)
 - TC: $O(mn)$
 - SC: $O(1)$
 
 ```python
-class Solution(object):
+class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
-        is_col = False
-        R = len(matrix)
-        C = len(matrix[0])
-        for i in range(R):
-            # Since first cell for both first row and first column is the same i.e. matrix[0][0]
-            # We can use an additional variable for either the first row/column.
-            # For this solution we are using an additional variable for the first column
-            # and using matrix[0][0] for the first row.
-            if matrix[i][0] == 0:
-                is_col = True
-            for j in range(1, C):
-                # If an element is zero, we set the first element of the corresponding row and column to 0
-                if matrix[i][j] == 0:
-                    matrix[0][j] = 0
-                    matrix[i][0] = 0
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        m, n = len(matrix), len(matrix[0])
 
-        # Iterate over the array once again and using the first row and first column, update the elements.
-        for i in range(1, R):
-            for j in range(1, C):
-                if not matrix[i][0] or not matrix[0][j]:
+        # Check if first row or first column need to be zeroed
+        first_row_zero = any(matrix[0][j] == 0 for j in range(n))
+        first_col_zero = any(matrix[i][0] == 0 for i in range(m))
+
+        # Use first row and column as markers
+        for i in range(1, m):
+            for j in range(1, n):
+                if matrix[i][j] == 0:
+                    matrix[i][0] = 0
+                    matrix[0][j] = 0
+
+        # Zero cells based on markers (skip first row/col for now)
+        for i in range(1, m):
+            for j in range(1, n):
+                if matrix[i][0] == 0 or matrix[0][j] == 0:
                     matrix[i][j] = 0
 
-        # See if the first row needs to be set to zero as well
-        if matrix[0][0] == 0:
-            for j in range(C):
+        # Zero the first row if needed
+        if first_row_zero:
+            for j in range(n):
                 matrix[0][j] = 0
 
-        # See if the first column needs to be set to zero as well
-        if is_col:
-            for i in range(R):
+        # Zero the first column if needed
+        if first_col_zero:
+            for i in range(m):
                 matrix[i][0] = 0
 
 ```
+
+Notes: When I tried to solve the follow-up question 2, I thought of converting zeros that are encountered while changing rows/cols values to zeros as negative ones, and later on, converting negative ones back to zeros. However, this approach doesn't work since the value range is all possible values for 4 byte integer, which is from -2^31 to 2^31-1. (If values are restricted to positive integers, this approach works.)
