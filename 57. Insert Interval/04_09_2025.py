@@ -1,9 +1,11 @@
 # problem: https://leetcode.com/problems/insert-interval/
 # submission: https://leetcode.com/problems/insert-interval/submissions/1601822668/
+# runtime: 0 ms, memory: 19.74 MB
 
 # 9 min
 # TC: O(n log n)
 # SC: O(n) (Python timsort. output list is not counted.)
+
 
 # From LeetCode Top Interview 150 - Intervals
 
