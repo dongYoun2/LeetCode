@@ -1,6 +1,6 @@
 # problem: https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
 # submission: https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/submissions/1602829506/
-
+# runtime: 224 ms, memory: 51.51 MB
 
 # 23 min
 # TC: O(n log n), where n is the number of balloons (points)
