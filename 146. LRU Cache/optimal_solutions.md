@@ -5,7 +5,7 @@ The three solutions below all perform with the equivalent complexity:
 - SC: structural space (LRU Cache) - $O(capacity)$, auxiliary space per operation (get/put) - $O(1)$
 <br>
 
-## Doubly Linked List with Hashmap
+## Doubly Linked List with Hashmap (From Scratch)
 
 - [Submission](https://leetcode.com/problems/lru-cache/submissions/1614175674)
 
