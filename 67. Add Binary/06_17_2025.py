@@ -11,10 +11,11 @@
 # This is indeed not a bit manipulation solution. Rather, it is a simulation of the addition process (or a simple implementation of the AC).
 
 # The code below can be improved in two ways:
-# 1. We can simply use `//` and `%` operators (or `divmod` function) to find a proper digit and carry instead of using if-else statements. `s % 2` gives us the digit to append, and `s // 2` gives us the carry for the next iteration.
+# 1. We can simply use `//` and `%` operators (or `divmod` function) to find a proper digit and carry instead of using if-else statements. `% 2` gives us the digit to append, and `// 2` gives us the carry for the next iteration.
 # 2. We can also use Python string's `zfill()` function to pad the shorter string with leading zeros instead of manually calculating the difference in lengths and prepending zeros.
+# This improved version can be found in the Editorial section's Approach 1 or the README's Bit-by-Bit Computation section.
 
-# Bit manipulation solution can be found in the Editorial section's Approach 2 or the markdown file.
+# Bit manipulation solution can be found in the Editorial section's Approach 2 or the README's Bit Manipulation section.
 
 
 class Solution:
