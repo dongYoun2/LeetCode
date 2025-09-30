@@ -8,7 +8,7 @@
 
 # From LeetCode Top Interview 150 - Array / String
 
-# the problem is an application of prefix sum technique. pretty straightforward once you notice this is a prefix sum problem. One optimization could be reducing the space complexity to O(1) by using only the output array to store the prefix products and using a single variable to keep track of the suffix product. optimized code can be found in https://leetcode.com/problems/product-of-array-except-self/submissions/1570581293/.
+# the problem is an application of prefix sum technique. pretty straightforward once you notice this is a prefix sum problem. One optimization could be reducing the space complexity to O(1) by using only the output array to store the prefix products and using a single variable to keep track of the suffix product, which solves the follow-up question. optimized code can be found in https://leetcode.com/problems/product-of-array-except-self/submissions/1570581293/.
 
 
 class Solution:
