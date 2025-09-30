@@ -1,9 +1,14 @@
 This document explains the solution for the follow-up question of the LeetCode [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/).
 
-## Initial Approach: Hash Table + Linear Search
+## Initial Approach: Hash Table + Linear Search (Brute Force for Mulitple Queries)
 The original code (`03_22_2025.py`), which uses two-pointer algorithm is inefficient when there are many query strings — that is, $s_1, s_2, \cdots, s_k$, where $k \geq 10^9$. The time complexity becomes $O(k * |t|)$. This means for each and every query, we have to scan the target string.
 
-To try to optimize this, I coded up like below.
+To try to optimize this, I coded up like below:
+
+- [submission](https://leetcode.com/problems/is-subsequence/submissions/1582698449/) (Runtime: 0 ms, Memory: 18.12 MB)
+- TC: $O(k * |s| * |t|)$
+- SC: $O(|t|)$, for the `t_char_to_index` hash table.
+
 ```python
 # took 29 min
 
@@ -48,7 +53,7 @@ A logic itself for this code is correct, but there's still a room for further op
 1. uses **hash table**
 2. searches index of current source string's character in a target string **greedily**.
 
-A **time complexity** for this code is $O(t + k * |s| * |t|)$, which is bounded by $O(k * |s| * |t|)$. It seems like it got worsen than the two-pointer algorithm since the |s| is additionally introduced. There can be two scenarios:
+A **time complexity** for this code is $O(|t| + k * |s| * |t|)$, where $O(|t|)$ is for constructing the hash table `t_char_to_index`, and $O(|s| * |t|)$ `is_subsequence()` call for each $k$ queries (For a correct API design, building hash table based on the string `t` should be done only once. It can done by checking whether the `t_char_to_index` is initialized or not.). Therefore, the total time complexity is bounded by $O(k * |s| * |t|)$. It seems like it got worsen than the two-pointer algorithm since the $|s|$ is additionally introduced. There can be two scenarios:
 
 1. **average case**: characters of target string are well distributed over the hash map keys (length of each list in a hasp map is similar)
 2. **worst case**: hasp map's lists are skewed (target string has many (or all) repeated characters)
@@ -63,36 +68,48 @@ This is more efficient than the two-pointer algorithm when there are many querie
 It seems like there exists a case where two-pointer algorithm still performs better — that is, when $|s| \gt |t|$. This can be prevented using the length-based early return.
 
 Fully optimized code is as follows:
+
+- [Submission](https://leetcode.com/problems/is-subsequence/submissions/1787574596/) (Runtime: 1 ms, Memory: 18.24 MB)
+- TC: $O(k * |s| * log |t|)$
+- SC: $O(|t|)$
+
+
 ```python
 import bisect
 
 
 class Solution:
+    def __init__(self):
+        self.t_char_to_index = None
+
+
     def isSubsequence(self, s: str, t: str) -> bool:
         if len(s) > len(t):
             return False
 
-        t_char_to_index = {}
-        for i, c in enumerate(t):
-            if c in t_char_to_index:
-                t_char_to_index[c].append(i)
-            else:
-                t_char_to_index[c] = [i]
+        if self.t_char_to_index is None:
+            self.t_char_to_index = {}
+            for i, c in enumerate(t):
+                if c in self.t_char_to_index:
+                    self.t_char_to_index[c].append(i)
+                else:
+                    self.t_char_to_index[c] = [i]
 
         target_index = -1
         for c in s:
             try:
-                index_list = t_char_to_index[c]
+                index_list = self.t_char_to_index[c]
                 find_idx = bisect.bisect_right(index_list, target_index)
 
                 if find_idx == len(index_list):
                     return False
 
                 target_index = index_list[find_idx]
-            except: # when 'c' keyError for 't_char_to_index' dict
+            except: # when 'c' keyError for 'self.t_char_to_index' dict
                 return False
 
         return True
+
 ```
 
 cf.) This algorithm is the same as the approach shown in the `Editorial` section's **Approach 3: Greedy Match with Character Indices Hashmap**. Further details can be found there as well.
