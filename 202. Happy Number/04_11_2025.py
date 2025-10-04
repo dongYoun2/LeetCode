@@ -1,9 +1,8 @@
-# problem: https://leetcode.com/problems/happy-number/
 # submission: https://leetcode.com/problems/happy-number/submissions/1604142201/
 
 # 9 min
 # TC: O(c log n) -> O(log n), where c is a constant and log is base 10
-# SC: O(1)
+# SC: O(C) -> O(1), according to GPT, the number of values that `set_` can hold is bounded by a constant, 810.
 
 # From LeetCode Top Interview 150 - Hashmap
 
