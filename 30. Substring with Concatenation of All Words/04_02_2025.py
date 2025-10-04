@@ -1,12 +1,12 @@
-# problem: https://leetcode.com/problems/substring-with-concatenation-of-all-words/
 # submission: https://leetcode.com/problems/substring-with-concatenation-of-all-words/submissions/1594933402/
 
 # 84 min
-# L: length of `words`
-# W: length of each word (they are all the same length (fixed))
-# S: length of `s`
-# TC: O(W*L + W*(S/W)*2) -> O(W*L + S) (W*L for counter, S times of sliding window process, and (S/W)*2 for each sliding window process)
-# SC: O(W*L) (counter)
+# TC: Amortized: O(n); worst-case (due to `word_cntr.copy()`): O(n + (n/w) * U) -> O((n*U) / w)
+# SC: O(U) (counter)
+# - n: length of `s`
+# - w: length of each word (all words are the same length)
+# - U: number of unique words in `words`
+# cf) on every encounter of an unknown word we do `word_cntr_cp.copy()``, which is O(U). In a worst case with frequent unknown words, we may reset about n / w times.
 
 # I knew that I had to use the sliding window algorithm since I was solving problems based on the algorithm type.
 
@@ -16,7 +16,15 @@
 
 # I learned that I have to take the time to think logically about what should occur at certain steps so that every line of code has a clear purpose. I also realized that using clear and meaningful variable names—i.e., `i` to `window_s`—helps this process a lot.
 
-# Consult the markdown for the debugging process and intermediate codes (which are wrong) that I went through before arriving at the final one below.
+# some points:
+# - `Counter` has to be used instead of `set` since duplicated word could exists in `words`.
+# - To easily update the `word_cntr` when the rightmost word in the window is an invalid word (word that doesn't exist in `words`), `word_cntr_cp` (copied version of the initial word counter) is maintained.
+# - `windw_s` and `window_e` indicate the start and end pointers of the sliding window.
+# - early return when the `len(s)` is less than the number of total characters in `words`.
+# - `find_concat_strings()` performs one sliding window process (one pass). (So, `word_size` times of sliding window processes.)
+
+# cf.) for more details, refer to the markdown file.
+
 
 from collections import Counter
 
