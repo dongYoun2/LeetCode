@@ -1,4 +1,3 @@
-# problem: https://leetcode.com/problems/min-stack/
 # submission: https://leetcode.com/problems/min-stack/submissions/1604755340/
 
 # 23 min

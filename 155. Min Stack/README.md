@@ -7,7 +7,7 @@ Unlike `04_12_2025.py` solution, we could solve the problem without using any if
 1. Initialize `min_stack` with $2^{31}$, where $2^{31}$ is the one added value from the maximum value that the `val` can take. This is to not consider the (exception) case where `stack` (or `min_stack`) is pushed when it is empty. (This is analogous to using the dummy nodes in a linked list.)
 2. Keep the `min_stack` length the same as `stack` (technically, `len(min_stack) == len(stack) + 1`). Whenever we push or pop the stack, we can also perform the same operation on the `min_stack`.
 
-- [Submission](https://leetcode.com/problems/min-stack/submissions/1234483546/)
+- [Submission](https://leetcode.com/problems/min-stack/submissions/1234483546/) (Runtime: 50 ms, Memory: 20.28 MB)
 - TC: all methods (push, pop, top, getMin) are $O(1)$ (required in the problem)
 - SC: $O(2*n)$ -> $O(n)$ (stack + min_stack)
 
