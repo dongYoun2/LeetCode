@@ -1,8 +1,8 @@
 # problem: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 # submission: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/submissions/1614737196/ (Runtime: 31 ms)
 
-# TC: O(n), where n is the number of nodes in the tree
-# SC: O(n)
+# TC: O(n^2), where n is the number of nodes in the tree (worst-case: skewed tree)
+# SC: O(n), recursion stack space
 
 # I simply converted "04_22_2025.py" to pass indices as arguments instead of slices. In Python, slicing the list makes a copy of the list, which requires additional linear time and space. By passing the indices, we can avoid this overhead. The execution time became 3x faster than the "04_22_2025.py" code.
 

@@ -1,9 +1,10 @@
-# problem: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 # submission: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/submissions/1614624113/
+# runtime: 96 ms, memory: 89.12 MB
 
 # 19 min
-# TC: O(n), where n is the number of nodes in the tree
-# SC: O(n)
+# TC: O(n^2 + n^2) -> O(n^2), where n is the number of nodes in the tree (worst-case: skewed tree)
+# - O(n^2) for search and O(n^2) for slicing
+# SC: O(n + n) -> O(n), recursion stack space + list slices (copying)
 
 # From LeetCode Top Interview 150 - Binary Tree General
 
@@ -13,7 +14,7 @@
 # 1. Passing indices instead of slices to avoid copying the list, which requires additional linear time and space.
 # 2. Using a dictionary to store the indices of the inorder traversal at once as a preprocessing step, so that we can avoid the linear search for the index of the root in the inorder list every time we call the function.
 
-# After submitting the "04_22_2025.py" solution, I optimized it with the above first point, and coded up on the "04_22_2025_passing_indices.py" (31 ms runtime). I couldn't think of the second point at that moment, and found it out after going through LeetCode's Editorial section. By applying both optimizations, the execution time was reduced by 90% (10x faster, 3 ms runtime) compared to applying only the first one ("04_22_2025_passing_indices.py"). Refer to the LeetCode Editorial for the code with both optimizations.
+# After submitting the "04_22_2025.py" solution, I optimized it with the above first point, and coded up on the "04_22_2025_passing_indices.py" (31 ms runtime). I couldn't think of the second point at that moment, and found it out after going through LeetCode's Editorial section. By applying both optimizations, the execution time was reduced significantly compared to applying only the first optimization technique ("04_22_2025_passing_indices.py"). Refer to the markdown filw for the code with both optimizations.
 
 # cf.) I just realized that the `right_len` variable is not used in the code, and `left_len` is simply `pos` haha.
 
