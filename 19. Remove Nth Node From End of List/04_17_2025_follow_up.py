@@ -1,5 +1,6 @@
 # problem: https://leetcode.com/problems/linked-list-cycle/
 # submission: https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/1609502562/
+# this solutoin solves the follow-up question but with extra space
 
 # 7 min
 # TC: O(n), where n is the number of nodes in the linked list (one-pass alg.)
