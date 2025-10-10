@@ -9,8 +9,7 @@ The key idea is that when processing the `N`th level to connect all the nodes on
 **One thing to keep in mind is that since we can only access children nodes from a parent node (or next-level nodes from the previous level), not vice versa (due to the tree structure), we establish the `N+1`th level's `next` pointers while still on the `N`th level.** For more details, refer to the Editorial's second approach.
 
 
-- [Submission](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/submissions/1616977937/)
-- runtime: 47 ms, memory: 19.1 MB
+- [Submission](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/submissions/1616977937/) (runtime: 47 ms, memory: 19.1 MB)
 - TC: $O(n)$, where $n$ is the number of nodes in the tree
 - SC: $O(1)$ (Recursion stack is not considered since it doesn't count as an extra space in the follw-up question.)
 
