@@ -1,5 +1,5 @@
-# problem: https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
 # submission: https://leetcode.com/problems/flatten-binary-tree-to-linked-list/submissions/1617750634/
+# runtime: 10 ms, memory: 19 MB
 
 # 5 min
 # TC: O(n + n) -> O(n), where n is the number of nodes in the tree (deepcopy + recursion stack)
