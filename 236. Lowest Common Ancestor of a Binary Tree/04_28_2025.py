@@ -1,4 +1,3 @@
-# problem: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 # submission: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/submissions/1620437522/
 
 # 36 min
