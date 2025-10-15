@@ -1,12 +1,20 @@
 [Problem](https://leetcode.com/problems/symmetric-tree/)
 
+## Recursive Approach
+
+Please refer to the [`10_15_2025.py`](10_15_2025.py) for the recursive approach.
+
+
+## Iterative Approach with Queue
+
+Please refer to the [`05_08_2025_follow_up.py`](05_08_2025_follow_up.py) for the iterative approach with queue.
+
+
 ## Iteartive Approach with Stack
 
-- [Submission](https://leetcode.com/problems/symmetric-tree/submissions/1629040882/)
+- [Submission](https://leetcode.com/problems/symmetric-tree/submissions/1629040882/) (Runtime: 0 ms, Memory: 17.80 MB)
 - TC: $O(n)$, where $n$ is the number of nodes in the tree.
 - SC: $O(n)$ (for the stack space).
-
-
 
 ```python
 # Definition for a binary tree node.

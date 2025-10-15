@@ -1,5 +1,5 @@
-# problem: https://leetcode.com/problems/symmetric-tree/
 # submission: https://leetcode.com/problems/symmetric-tree/submissions/1629025873/
+# runtime: 0 ms, memory: 17.87 MB
 
 # 10 min
 # TC: O(n), where n is the number of nodes in the tree
@@ -8,8 +8,6 @@
 # From LeetCode Top Interview 150 - Binary Tree General
 
 # In the beginning, I was thinking of prototyping the recursive function with one root parameter; `isSymmetric`. However, I realized that I need to compare two tree nodes at a time, whether they are mirrored or not. So, I definedthe  `is_mirrored_trees` function.
-
-# cf.) Iterative approach using a queue can be found in "05_08_2025_follow_up.py" and using a stack can be found in a markdown file.
 
 
 # Definition for a binary tree node.

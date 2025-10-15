@@ -1,5 +1,5 @@
-# problem: https://leetcode.com/problems/symmetric-tree/
 # submission: https://leetcode.com/problems/symmetric-tree/submissions/1629035090/
+# runtime: 0 ms, memory: 18.15 MB
 
 # 17 min
 # TC: O(n), where n is the number of nodes in the tree
