@@ -1,8 +1,7 @@
-# problem: https://leetcode.com/problems/delete-node-in-a-bst/
 # submission: https://leetcode.com/problems/delete-node-in-a-bst/submissions/1630385150/
+# runtime: 4 ms, memory: 21.5 MB
 
 # 37 min
-# runtime: 4 ms, memory: 21.5 MB
 # TC: O(h), where h is the height of the tree
 # SC: O(h) (for recursion stack)
 
@@ -13,6 +12,8 @@
 # After fixing all the above issues, I was able to solve the problem correctly, but the code readability is very poor. Refer to the Editorial section for a more readable and typical BST node deletion solution. Editorial approach divides the logic into three cases—whether deleting a node is a 1) leaf node, 2) node with right child, or 3) node with only left child. Also, it separately implements methods to find the successor and predecessor nodes of the deleting node in the BST inorder traversal. (BST inorder traversal is always sorted in ascending order.)
 
 # cf.) Note that my solution deletes a node in a BST by subtree-relinking, which physically splices out the node object itself, whereas the Editorial solution deletes a node by value-copy technique, where the logical deletion happens by copying the value up to the parent node until the leaf node of the deleting node's subtree is reached. This is why my code needs to keep track of the parent node of the deleting node, whereas the Editorial solution doesn't need to.
+
+# cf.) after solving this problem again on "10_16_2025.py", i was able to solve it with subtree-relinking approach, without passing the parent node as an argument. moreover, "10_16_2025.py" is more efficient code than the Editorial's solution though it doesn't use the value-copy technique. for more details, refer to the "10_16_2025.py".
 
 
 # Definition for a binary tree node.
