@@ -1,8 +1,7 @@
-# problem: https://leetcode.com/problems/surrounded-regions/
 # submission: https://leetcode.com/problems/surrounded-regions/submissions/1631371409/
+# runtime: 2108 ms, memory: 46.4 MB
 
 # 60 min
-# runtime: 2108 ms, memory: 46.4 MB
 # TC: O(mn), where m is the number of rows and n is the number of columns
 # SC: O(4mn) -> O(mn) (`visited`, `islands`, `region_index`, and the recursion stack)
 
