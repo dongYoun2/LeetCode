@@ -1,10 +1,9 @@
-# problem: https://leetcode.com/problems/clone-graph/
 # submission: https://leetcode.com/problems/clone-graph/submissions/1231246199/
+# runtime: 35 ms, memory: 18.2 MB
 
 # 30 min
-# runtime: 35 ms, memory: 18.2 MB
 # TC: O(V + E), where V is the number of nodes and E is the number of edges
-# SC: O(2V) -> O(V) (for the visited dict and the queue)
+# SC: O(2V) -> O(V) (for the visited dict and the queue. also, the cloned graph is not counted since it's an output space.)
 
 # From LeetCode Top Interview 150 - Graph General
 
@@ -12,7 +11,7 @@
 
 # I used BFS to solve this problem. The key idea is to store the cloned nodes in a hash table (`visited`), which also serves as a visited set. At first, I simply used a set to store them, but I realized that I needed to access the cloned nodes later, which could be done by using a dictionary key.
 
-# cf.) This problem can also be solved using DFS or simply the Python deepcopy module although the latter is not intended.
+# cf.) This problem can also be solved using DFS or simply the Python deepcopy module although the latter is not what the question intended.
 
 
 """
