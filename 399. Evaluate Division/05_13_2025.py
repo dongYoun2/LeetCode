@@ -1,8 +1,9 @@
-# problem: https://leetcode.com/problems/evaluate-division/
 # submission: https://leetcode.com/problems/evaluate-division/submissions/1633414777/
+# runtime: 0 ms, memory: 17.89 MB
 
 # 60 min
-# TC: O(V+E) + O(Q*(V+E)) -> O(Q*(V+E)), where V, E, Q are the number of vertices, edges and queries respectively (cosntructing graph: O(V+E), DFS: O(V+E))
+# Let N, V, E, and Q be the number of equations, vertices (variables, <= 2N), edges (\approx 2N), and queries respectively.
+# TC: O(N + Q*(V+E)), constructing graph: O(N), DFS per query: O(V+E)
 # SC: O(V + E + 2*V) -> O(V+E) (constructing graph: O(V+E), visited set: O(V), stack: O(V), and output space is not counted)
 
 # From LeetCode Top Interview 150 - Graph General
@@ -13,6 +14,8 @@
 # Thus, I decided to construct the graph as is and do a DFS for each query. This is acceptable since the number of equations (edges) and queries (paths to explore) is only up to 20 (very small). One way to optimize this is the memoization technique to cache the DFS results for later queries. Moreover, I first tried to implement DFS using recursion, but I found out that iterative DFS is easier to implement in this case since we need to keep track of the path score and the DFS function is called multiple times (need to make sure everything is reinitialized).
 
 # cf.) The best optimized solution for the case where many equations and queries exist is to use the Union-Find algorithm. For more details, refer to the Editorial section.
+
+# cf.) recursive DFS is also acutally pretty simple and straightforward. reinitializing everything for each query can be easily done by passing the initial values as arguments to the recursive function. Fore more details, refer to the markdown file. note that recursive DFS approach in markdown file also caches the results (memoization).
 
 
 from collections import defaultdict, deque
