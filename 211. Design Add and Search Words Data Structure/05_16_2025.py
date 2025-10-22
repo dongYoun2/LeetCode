@@ -1,5 +1,5 @@
-# problem: https://leetcode.com/problems/design-add-and-search-words-data-structure/
 # submission: https://leetcode.com/problems/design-add-and-search-words-data-structure/submissions/1636825205/
+# runtime: 1405 ms, memory: 52.6 MB
 
 # 44 min
 # TC:
