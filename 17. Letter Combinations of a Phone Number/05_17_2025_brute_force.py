@@ -1,5 +1,5 @@
-# problem: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
-# submission: https://leetcode.com/problems/letter-combinations-of-a-phone-number/submissions/1636861581/?envType=study-plan-v2&envId=top-interview-150
+# submission: https://leetcode.com/problems/letter-combinations-of-a-phone-number/submissions/1636861581/
+# runtime: 0 ms, memory: 17.86 MB
 
 # 15 min
 # TC: O(4^n), where n (0 <= n <= 4) is the length of `digits`. (The constant 4 is the maximum number of letters for a digit.)

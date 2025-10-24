@@ -1,5 +1,5 @@
-# problem: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 # submission: https://leetcode.com/problems/letter-combinations-of-a-phone-number/submissions/1636928913/
+# runtime: 0 ms, memory: 17.67 MB
 
 # 23 min
 # TC: O(4*n), where n (0 <= n <= 4) is the length of `digits`. (The constant 4 is the maximum number of letters for a digit.)
@@ -7,7 +7,7 @@
 
 # From LeetCode Top Interview 150 - Backtracking
 
-# Although I knew this was a backtracking problem, I simply implemented it using the brute-force approach since I couldn't think of a direct backtracking solution. It took me a bit of time to implement the backtracking solution properly. It's good to notice that backtracking mostly comes with the DFS approach, and it shines when we can prune the search space (however, we cannot prune anything for this problem).
+# Although I knew this was a backtracking problem, I simply implemented it using the brute-force approach with `itertools.product()` at first (05_17_2025.py) since I couldn't think of a direct backtracking solution. It took me a bit of time to implement the backtracking solution properly. It's good to notice that backtracking mostly comes with the DFS approach, and it shines when we can prune the search space (however, we cannot prune anything for this problem).
 
 # Backtracking generally follows the steps below:
 # 1. "Choose" a candidate from the current position.
