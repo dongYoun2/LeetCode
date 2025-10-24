@@ -1,8 +1,7 @@
-# problem: https://leetcode.com/problems/combinations/
 # submission: https://leetcode.com/problems/combinations/submissions/1637023421/
+# runtime: 140 ms, memory: 59.67 MB
 
 # 12 min
-# runtime: 140 ms, memory: 59.7 MB
 # n, k is defines as: Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].
 # TC: O(2^n). This is the worst case where k == n. General case would be O(\Sigma_{i=0}^{k} \binom{n}{i}).
 # SC: O(k). This is for the recursion stack, and the output space doesn't count.

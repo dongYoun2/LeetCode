@@ -1,8 +1,7 @@
-# problem: https://leetcode.com/problems/combinations/
 # submission: https://leetcode.com/problems/combinations/submissions/1637008691/
+# runtime: 17 ms, memory: 56.9 MB
 
 # 1 min
-# runtime: 17 ms, memory: 56.9 MB
 # TC: O(k \cdot \binom{n}{k}$ ($\binom{n}{k} (same as the code in "fully_pruned_backtracking.md")
 # SC: O(n + k) -> O(k). O(n) for the list of numbers from 1 to n, and O(k) for the `combinations` iterator.
 

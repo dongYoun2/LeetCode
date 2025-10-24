@@ -6,8 +6,12 @@
 - TC: $O(k \cdot \binom{n}{k}$ ($\binom{n}{k}$ means $n$ choose $k$)
 - SC: $O(k)$. This is for the recursion stack, and the output space doesn't count.
 
-The key to **backtracking** is to **prune the search space** as much as possible. In this case, we can avoid unnecessary recursive calls by **calculating the maximum starting number** for the next element in the combination based on how many elements are left to fill, as well as the early exit condition when the combination is complete.
-<br>
+The key to **backtracking** is to **prune the search space** as much as possible. In this case, we can avoid unnecessary recursive calls by two criteria:
+1. **How many numbers are still needed** to complete a combination of length k.
+2. **Whether there are enough remaining numbers** (from the current position up to n) to fill those remaining slots.
+
+cf.) Note that `10_24_2025.py` solution only uses the second pruning criterion, and `05_18_2025_backtracking.py` doesn't prune anything, which is simply the pure backtracking approach.
+
 
 ```python
 class Solution:
