@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/combination-sum/submissions/1645531762/
+# runtime: 6 ms, memory: 17.9 MB
 
 # 15 min (time coding up 05_26_2025.py included)
-# runtime: 6 ms, memory: 17.9 MB
 # TC: O(n^d), where n is the number of candidates and d is the maximum depth of the recursion (d \approx target / min(candidates)).
 # - O(n^d): Total number of calls in the DFS tree; at each node, we loop over all n candidates, and we can go as deep as d.
 # -> So the overall time complexity is exponential in "target".

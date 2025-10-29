@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/combination-sum/submissions/1645531539/
+# runtime: 412 ms, memory: 18 MB
 
 # 11 min
-# runtime: 412 ms, memory: 18 MB
 # TC: O(n^d * d log d), where n is the number of candidates and d is the maximum depth of the recursion (d \approx target / min(candidates)).
 # - O(n^d): Total number of calls in the DFS tree; at each node, we loop over all n candidates, and we can go as deep as d.
 # - O(d log d): At each "solution" leaf node, we sort the current combination of candidates, which takes O(d log d) time.
