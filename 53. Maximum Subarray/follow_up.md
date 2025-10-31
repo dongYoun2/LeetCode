@@ -10,7 +10,6 @@ Kadane's algorithm is a more efficient solution, but this divide and conquer app
 - [Submission](https://leetcode.com/problems/maximum-subarray/submissions/1652234138/) (Runtime: 1280 ms, Memory: 45.96 MB)
 - TC: $O(n \log n)$, where $n$ is the length of `nums`.
 - SC: $O(\log n)$ for recursion stack space.
-<br>
 
 ```python
 import math
@@ -57,3 +56,39 @@ class Solution:
         return divide_and_conquer(0, len(nums) - 1)
 
 ```
+
+
+In the above code, we computed the best prefix sum and the best suffix sum by iterating through the array in the `compute_cross_max_sum` function. However, this can be improved by directly returning the total sum, the maximum prefix sum, the maximum suffix sum, and the maximum subarray sum in the recursive function (corresponds to the `compute()` function below). Note that the runtime is ~4x faster than the above code.
+
+cf.) This code is improved and refactored from the `10_31_2025_follow_up.py` code.
+
+- [Submission](https://leetcode.com/problems/maximum-subarray/submissions/1817027125/) (Runtime: 285 ms, Memory: 45.80 MB)
+- Time and space complexity are the same as the above.
+
+
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        def compute(s, e):
+            if s == e:
+                # return (total, max_prefix, max_suffix, max_subarray)
+                return nums[s], nums[s], nums[s], nums[s]
+
+            m = (s + e) // 2
+            l_total, l_prefix, l_suffix, l_best = compute(s, m)
+            r_total, r_prefix, r_suffix, r_best = compute(m + 1, e)
+
+            total = l_total + r_total
+            prefix = max(l_prefix, l_total + r_prefix)
+            suffix = max(r_suffix, r_total + l_suffix)
+            best = max(l_best, r_best, l_suffix + r_prefix)
+
+            return total, prefix, suffix, best
+
+
+        return compute(0, len(nums) - 1)[3]
+
+```
+
+
+Though we could solve this problem with the **Divide and Conquer** approach, it's subtle and the Kadane's algorithm is much simpler and more efficient. (Simply good to practice the divide and conquer approach.)
