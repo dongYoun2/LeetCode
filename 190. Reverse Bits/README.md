@@ -1,6 +1,12 @@
 [Problem](https://leetcode.com/problems/reverse-bits/)
 
-## Byte by Byte with Memoization
+
+## Bit by Bit Computation
+
+Refer to the [06_26_2025.py](06_26_2025.py) solution.
+
+
+## Byte by Byte with Memoization (Follow-up Question)
 
 This solves the follow-up question: "If this function is called many times, how would you optimize it?"
 
@@ -30,4 +36,18 @@ class Solution:
     @functools.lru_cache(maxsize=256)
     def reverseByte(self, byte):
         return (byte * 0x0202020202 & 0x010884422010) % 1023
+```
+
+During the interview, of course we don't have to know the details of the above math trick. We can simply state that the idea (to solve the follow-up question) is to precompute or cache the reversed byte (8-bits) values and use them to construct the final result. In this case, the `reverseByte(...)` function will simply be as follows:
+
+```python
+@functools.lru_cache(maxsize=256)
+    def reverseByte(self, byte: int) -> int:
+        """Reverse the 8 bits of `byte` (0..255)."""
+        r = 0
+        for _ in range(8):
+            r = (r << 1) | (byte & 1)
+            byte >>= 1
+        return r
+
 ```
