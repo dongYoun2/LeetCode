@@ -1,4 +1,5 @@
 # submission: https://leetcode.com/problems/search-in-rotated-sorted-array/submissions/1659752261/
+# runtime: 0 ms, memory: 18.08 MB
 
 # 29 min
 # TC: O(log n), where n is the number of elements in the array.
