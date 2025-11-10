@@ -5,7 +5,7 @@
 # SC: O(1)
 
 
-# after noticing that this problem can also be solved using two pointers technique (expand from center), i solved it with that approach. as long as i can find out this problem can be solved with two pointers during the interview, i believe implementation would be quite straightforward.
+# after noticing that this problem can also be solved using two pointers technique (expand from center), i solved it with that approach. as long as i can find out that this problem can be solved with two pointers during the interview, i believe the implementation would be quite straightforward.
 
 
 class Solution:

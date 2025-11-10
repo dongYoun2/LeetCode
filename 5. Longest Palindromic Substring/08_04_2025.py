@@ -1,4 +1,4 @@
-# problem.submission: https://leetcode.com/problems/longest-palindromic-substring/submissions/1723123285/
+# submission: https://leetcode.com/problems/longest-palindromic-substring/submissions/1723123285/
 # runtime: 2476 ms, memory: 25.5 MB
 
 # 26 min

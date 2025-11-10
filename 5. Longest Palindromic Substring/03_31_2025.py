@@ -1,5 +1,5 @@
-# problem: https://leetcode.com/problems/longest-palindromic-substring/
 # submission: https://leetcode.com/problems/longest-palindromic-substring/submissions/1592488877/
+# runtime: 2518 ms, memory: 25.54 MB
 
 # 15 min
 # TC: O(n^2), where n is the length of the string
