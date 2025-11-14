@@ -13,6 +13,8 @@
 
 # Since I solved "56. Merge Intervals" yesterday, I came up the solution below quite easily. After appending `newInterval` to `intervals`, the rest logic is exactly the same as "56. Merge Intervals".
 
+# cf.) in the problem descrption, it mentions that the intervals are already sorted by the start time. so, actually, we don't need to sort the intervals again.
+
 class Solution:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         intervals.append(newInterval)

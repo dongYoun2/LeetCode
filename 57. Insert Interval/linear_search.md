@@ -21,6 +21,8 @@ class Solution:
         return left + [[s, e]] + right
 
 ```
+
+cf.) Similar code for the above approach is written in the `11_14_2025.py` file.
 <br>
 
 
