@@ -1,5 +1,5 @@
-# problem: https://leetcode.com/problems/binary-tree-level-order-traversal/
 # submission: https://leetcode.com/problems/binary-tree-level-order-traversal/submissions/1622062716/
+# runtime: 0 ms, memory: 18.31 MB
 
 # 5 min
 # TC: O(n), where n is the number of nodes in the tree.
