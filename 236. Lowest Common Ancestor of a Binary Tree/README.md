@@ -2,7 +2,12 @@
 
 ## DFS Approach
 
-Explanations are described in the comments below.
+
+Function `dfs(node)` returns the lowest node in `node`'s subtree that contains either `p`, `q`, or both—returning the current node when `p` and `q` are found in different subtrees.
+
+The good start point when implementing recursive function is deciding what to return. In this case, we return one of `None`, `p`, `q`, or the LCA (current node) for the subtreee rooted at `node`. Then, the key point is that `p` and `q` are split if `left_res` and `right_res` are both not `None`, which means the current node is the LCA. Otherwise, we return the non-`None` one (`left_res` or `right_res`) to propagate upward.
+
+cf.) Line by line explanations are described in the comments below.
 
 
 - [Submission](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/submissions/1801613472/) (Runtime: 63 ms, Memory: 22.00 MB)
