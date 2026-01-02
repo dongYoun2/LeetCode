@@ -1,5 +1,5 @@
-# problem: https://leetcode.com/problems/evaluate-reverse-polish-notation/
 # submission: https://leetcode.com/problems/evaluate-reverse-polish-notation/submissions/1606778095/
+# runtime: 15 ms, memory: 19.20 MB
 
 # 17 min
 # TC: O(n), where n is the number of tokens
