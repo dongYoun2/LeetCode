@@ -1,8 +1,7 @@
-# problem: https://leetcode.com/problems/course-schedule/
 # submission: https://leetcode.com/problems/course-schedule/submissions/1634293646/
+# runtime: 3 ms, memory: 19.6 MB
 
 # 20 min
-# runtime: 3 ms, memory: 19.6 MB
 # TC: O(V + E), where V (vertices) is the number of courses and E (edges) is the number of prerequisites.
 # SC: O(V + E) (graph: O(V+E), indegree: O(V), queue and topo_list: O(V))
 
