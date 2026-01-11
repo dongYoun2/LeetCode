@@ -1,4 +1,5 @@
 # submission: https://leetcode.com/problems/min-stack/submissions/1604755340/
+# runtime: 7 ms, memory: 21.31 MB
 
 # 23 min
 # TC: all methods (push, pop, top, getMin) are O(1) (required in the problem)
