@@ -1,8 +1,7 @@
-# problem: https://leetcode.com/problems/number-of-islands/
 # submission: https://leetcode.com/problems/number-of-islands/submissions/1631281570/
+# runtime: 274 ms, memory: 20.6 MB
 
 # 10 min
-# runtime: 274 ms, memory: 20.6 MB
 # TC: O(mn), where m is the number of rows and n is the number of columns in the grid.
 # SC: O(2mn) -> O(mn) (for the visited array and the recursion stack)
 
