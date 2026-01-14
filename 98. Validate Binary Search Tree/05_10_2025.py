@@ -1,9 +1,8 @@
-# problem: https://leetcode.com/problems/validate-binary-search-tree/description/
 # submission: https://leetcode.com/problems/validate-binary-search-tree/submissions/1630460928/
+# runtime: 3 ms, memory: 20.3 MB
 
 # 5 min
-# runtime: 3 ms, memory: 20.3 MB
-# TC: O(n), where n is the number of nodes in the tree
+# TC: O(n + n log n) -> O(n log n), where n is the number of nodes in the tree (inorder traversal + sorting)
 # SC: O(n + n) -> O(n) (for `inorder_arr` list and sorted list to compare)
 
 # From LeetCode Top Interview 150 - Binary Tree General
