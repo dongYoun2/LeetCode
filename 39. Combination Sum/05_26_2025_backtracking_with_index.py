@@ -2,18 +2,15 @@
 # runtime: 6 ms, memory: 17.9 MB
 
 # 15 min (time coding up 05_26_2025.py included)
-# TC: O(n^d), where n is the number of candidates and d is the maximum depth of the recursion (d \approx target / min(candidates)).
-# - O(n^d): Total number of calls in the DFS tree; at each node, we loop over all n candidates, and we can go as deep as d.
-# -> So the overall time complexity is exponential in "target".
-# SC: O(2*d) -> O(d) (O(d) for the recursion stack and current combination storage respectively)
+# refer to the README.md for the complexity analysis. though the asymptotic time complexity is the same as the README solution (pruned version), the runtime is slower compared to the README solution in practice.
 
 
 # From LeetCode Top Interview 150 - Backtracking
 
 
-# The runtime is significantly improved by using the cursor index (`start`) to indicate the loop's starting index instead of sorting, tuple, set, and list conversion.
+# The runtime is significantly improved compared to the "05_26_2025.py" by using the cursor index (`start`) to indicate the loop's starting index instead of sorting, tuple, set, and list conversion.
 
-# However, this can be further optimized by pruning the search space by skipping candidates greater than the remaining target. To do this, we first need to sort candidates. For more details, refer to the markdown file.
+# However, this can be further optimized by pruning the search space by skipping candidates greater than the remaining target. To do this, we first need to sort candidates. For more details, refer to the README.md.
 
 
 class Solution:

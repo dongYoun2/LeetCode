@@ -2,11 +2,17 @@
 
 ## Backtracking (Recursive)
 
-This approach is based on DFS with backtracking further optimized from `05_26_2025_backtracking_with_index.py` by pruning candidates that exceed the remaining target. To achieve this, we first sorted the candidates in ascending order.
+This approach is based on DFS with backtracking further **optimized** from `05_26_2025_backtracking_with_index.py` by **pruning candidates that exceed the remaining target**. To achieve this, we first need to sort the candidates in ascending order.
 
 - [Submission](https://leetcode.com/problems/combination-sum/submissions/1645534487/) (Runtime: 3 ms, Memory: 17.8 MB)
-- TC: $O(n \log n + r \cdot d)$, where $n$ is the number of candidates, $r$ is number of returned combinations, and $d$ is max length of a combination ($d \approx $ `target` / `min(candidates)`).
-- SC: $O(2d)$ -> $O(d)$. Recursion stack space and the combination storage space respectively. (output space is not counted)
+- $N$: number of candidates
+- $T$: target
+- $m$: smallest candidate value
+- $d$: depth of the recursion tree; $d = \frac{T}{m}$ in the worst case
+- TC: $O(N \log N + N^d)$ -> $O(N^d)$
+  - $O(N \log N)$: sorting time
+  - $O(N^d)$: number of calls in the DFS tree
+- SC: $O(d) + O(d)$ -> $O(d)$ (first $O(d)$ is for the recursion stack, and the second $O(d)$ is for the combination storage `curr`. Output space is not counted.)
 
 ```python
 class Solution:

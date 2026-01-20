@@ -2,7 +2,7 @@
 # runtime: 3 ms, memory: 17.77 MB
 
 # 17 min
-# refer to the markdown file for the complexity analysis.
+# refer to the README.md for the complexity analysis.
 
 
 # pretty straightforward to implement. two points to note:
@@ -14,17 +14,17 @@ class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         candidates.sort()
         ans = []
-        def comb_sum(curr_comb: List[int], pos: int, left_sum: int):
-            if left_sum == 0:
-                ans.append(curr_comb[::])
+        def comb_sum(curr_comb: List[int], pos: int, remain: int):
+            if remain == 0:
+                ans.append(curr_comb[:])
                 return
 
             for i in range(pos, len(candidates)):
-                if candidates[i] > left_sum:
+                if candidates[i] > remain:
                     return
 
                 curr_comb.append(candidates[i])
-                comb_sum(curr_comb, i, left_sum - candidates[i])
+                comb_sum(curr_comb, i, remain - candidates[i])
                 curr_comb.pop()
 
 

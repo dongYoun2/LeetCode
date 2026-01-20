@@ -1,11 +1,19 @@
 # submission: https://leetcode.com/problems/combination-sum/submissions/1645531539/
 # runtime: 412 ms, memory: 18 MB
-
 # 11 min
-# TC: O(n^d * d log d), where n is the number of candidates and d is the maximum depth of the recursion (d \approx target / min(candidates)).
-# - O(n^d): Total number of calls in the DFS tree; at each node, we loop over all n candidates, and we can go as deep as d.
-# - O(d log d): At each "solution" leaf node, we sort the current combination of candidates, which takes O(d log d) time.
-# -> So the overall time complexity is exponential in "target".
+
+
+# - With the extra symbols below in addtion to the symbols used in the README.md:
+# - r: number of unique combinations returned (size of the `ans`)
+
+# TC: O(N^d + r * d \log d) -> O(N^d)
+# - O(N^d): Total number of calls in the DFS tree; at each node, we loop over all N candidates, and we can go as deep as d.
+# - O(r * d \log d): We have total r "solution" leaf nodes, and for each of them, we sort the current combination of candidates, which takes O(d \log d) time.
+
+# reasoning for simpliyfing the time complexity:
+# 1. since r <= O(N^d), O(N^d + r * d \log d) <= O(N^d + N^d * d \log d) == O(N^d * (1 + d \log d)) == O(N^d * d \log d)
+# 2. since a polynomial term (d \log d) is dominated by the exponential term (N^d), O(N^d * d \log d) == O(N^d)
+
 # SC: O(2*d) -> O(d) (O(d) for the recursion stack and current combination storage respectively)
 
 
