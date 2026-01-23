@@ -1,9 +1,10 @@
-# problem: https://leetcode.com/problems/merge-intervals/
 # submission: https://leetcode.com/problems/merge-intervals/submissions/1600826088/
-
+# runtime: 7 ms, memory: 20.94 MB
 # 8 min
+
 # TC: O(n log n + n) -> O(n log n)
 # SC: O(n) (Python timsort worst-case. Answer array is not counted.)
+
 
 # From LeetCode Top Interview 150 - Intervals
 
