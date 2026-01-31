@@ -2,7 +2,7 @@
 # runtime: 0 ms, memory: 17.76 MB
 
 # TC: O(n), where n is the number of elements in nums
-# SC: O(1)
+# SC: O(1) (in this problem, counter takes O(1) space since there are only 3 (constant) colors)
 
 
 # the solution below meets time and space complexities mentioned in the follow-up question, but it's a two-pass approach.

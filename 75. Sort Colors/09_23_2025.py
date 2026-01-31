@@ -3,7 +3,7 @@
 
 # 5 min
 # TC: O(n), where n is the number of elements in nums
-# SC: O(1)
+# SC: O(1) (in this problem, counter takes O(1) space since there are only 3 (constant) colors)
 
 # this is a two-pass approach. the logic is straightforward and is the same as the solution in 04_25_2024.py.
 
