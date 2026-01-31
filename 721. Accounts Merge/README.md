@@ -1,23 +1,33 @@
 [Problem](https://leetcode.com/problems/accounts-merge/)
 
+Accounts Merge problem can be solved by either graph traversl (DFS) or union-find (Disjoint Set Union). **What are the cues to identify which approach to use?**
+
+The problem implies that accounts A, B, and C must all be merged if A shares email with B and B shares email with C. This is a **transitive** relationship. The moment we see transitivity, we should think of graph connectivity or union-find approaches.
+
 
 ## DFS
 
-We can use DFS to traverse the graph and find the connected components (asking 'connectivity' is a classic graph problem). Each unique email is a vertex, and an edge exists between two vertices if the two emails are in the same account (typically by linking all to the first email in that account).
+We can use DFS to traverse the graph and find the connected components (asking **connectivity** is a classic graph problem). Each unique email is a vertex, and an edge exists between two vertices if the two emails are in the same account (typically by linking all to the first email in that account).
 
-[Submission](https://leetcode.com/problems/accounts-merge/submissions/1779426282/) (Runtime: 30 ms, Memory: 23.34 MB)
+**The reasoning behind connecting the rest emails to the first one only** is that emails being connected to a single component is enough instead of being fully connected. This **star graph** structure has an advantage of fewer edges while with the same correctness over the **fully-connected graph**. 
+
+cf.) This same reasoning applies to the [Union-Find approach](#union-find-disjoint-set-union) below when performing union operations to a single representative email (the first email).
+
+[Submission](https://leetcode.com/problems/accounts-merge/submissions/1779426282/)—Runtime: 30 ms (Beats 54.14%), Memory: 23.34 MB (Beats 26.84%)
 
 **Symbols**:
-- $N$: # input rows (original accounts)
-- $k_i$: # emails in row i
+- $N$: # of input rows (original accounts)
+- $k_i$: # of emails in $i$-th row (account)
 - $M=\sum_i k_i$: total email entries (with duplicates)
-- $U$: # unique emails (graph vertices)
+- $U$: # of unique emails (graph vertices)
 
-**TC**: $O(M + U log U)$
+cf.) $V$ and $E$ are used to represent the number of vertices and edges in the graph, respectively.
+
+**TC**: $O(M + U \log U)$
 - **time for building graph**: $O(M)$
 - **time for DFS traversal**: $O(V + E)$ -> $O(U + (M - N))$ -> $O(M)$ since $U \leq M$ and $N \leq M$. ($V$: # vertices, $E$: # edges)
-- **time for sorting in the component**: $O(U log U)$ (total sorting cost across all components is bounded by $U log U$)
-- therefore, adding these up, we get $O(M + U log U)$
+- **time for sorting in the component**: $O(U \log U)$ (total sorting cost across all components is bounded by $U \log U$)
+- therefore, adding these up, we get $O(M + U \log U)$
 
 **SC**: $O(M)$
 - **space for graph**: $O(V + E)$ -> $O(U + (M - N))$ -> $O(M)$
@@ -79,18 +89,19 @@ Union-find helps us to:
 1. **merge** two groups efficiently (union)
 2. **check** whether two elements are in the same group (find/connected)
 
-There are two tips to keep things fast in practice:
+There are two **optimization** techniques to keep things fast in practice:
 1. **Path compression** (during find)
 As we walk up to the root, we make everything on the path point directly to the root. Future finds become almost $O(1)$.
 2. **Union by rank/size** (during union)
 Always attach the smaller tree under the larger one, so trees stay shallow.
 
-<br>
-
-[Submission](https://leetcode.com/problems/accounts-merge/submissions/1779477814/) (Runtime: 31 ms, Memory: 21 MB)
+cf.) In the code below, `rank` is an estimate (heuristic; upper-bound guess) of the tree height because path compression in `find()` changes the tree height and `rank` is updated only during **union** operations.
 
 
-**TC**: $O(M + U log U)$
+[Submission](https://leetcode.com/problems/accounts-merge/submissions/1779477814/)—Runtime: 31 ms (Beats 52.73%), Memory: 21.04 MB (Beats 67.49%)
+
+
+**TC**: $O(M + U \log U)$
 - **build maps (ids, names)**: $O(M)$
 - **union operations**: $O((M-N)\alpha)$ (here, $\alpha$ is the inverse Ackermann function (very slow growing function), which is bounded by a **constant**)
 - **find/grouping**: $O(U\alpha)$
@@ -163,8 +174,10 @@ class Solution:
         return res
 
 ```
-
+### Path Halving in `find()` (Alternative to Path Compression)
 There may be an error if the input is too large so that recursion stack overflows in the `find()` methd. In this case, instead of fully flattening the tree, we can halve the path with the iterative approach (below code snippet).
+
+[Submission](https://leetcode.com/problems/accounts-merge/submissions/1779466340/)—Runtime: 27 ms (Beats 63.52%), Memory: 21.39 MB (Beats 63.97%)
 
 ```python
 def find(self, x: int) -> int:
@@ -172,4 +185,36 @@ def find(self, x: int) -> int:
         self.parent[x] = self.parent[self.parent[x]]  # path halving
         x = self.parent[x]
     return x
+```
+
+### DSU class with no optimization
+
+When implementing the union-find data structure, it's good to start with a simple implementation as shown below, then add optimizations, including path compression and union by rank/size.
+
+[Submission](https://leetcode.com/problems/accounts-merge/submissions/1903583370/)—Runtime: 52 ms (Beats 17.76%), Memory: 22.58 MB (Beats 38.37%)
+
+
+Below is a `DSU` class with no optimization.
+
+```python
+class DSU:
+    def __init__(self, n: int):
+        # parent[x] = parent of x; initially each node is its own parent
+        self.parent = list(range(n))
+
+    def find(self, x: int) -> int:
+        # no path compression
+        # walk up until we find the root
+        while self.parent[x] != x:
+            x = self.parent[x]
+        return x
+
+    def union(self, a: int, b: int) -> None:
+        ra = self.find(a)
+        rb = self.find(b)
+        if ra == rb:
+            return
+        # attach root of b to root of a (arbitrary choice)
+        self.parent[rb] = ra
+
 ```
