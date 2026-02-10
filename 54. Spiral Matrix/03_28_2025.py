@@ -1,4 +1,3 @@
-# problem: https://leetcode.com/problems/spiral-matrix/
 # submission: https://leetcode.com/problems/spiral-matrix/submissions/1589288396/
 
 # 22 min
@@ -7,7 +6,7 @@
 
 # This problem felt like a simulation problem. I had to think when I would want to change the direction of the traversal.
 
-# I used recursive function to implement the spiral order traversal. However, each function call makes at most one furher recursive call, which forms a linear recursive stack, visiting exactly m*n elements. Thus, the time complexity and the space complexity is both O(m*n). However, as the recursion forms a linear stack, we can use iterative approach to implement the same algorithm. For more details, refer the `iterative_approach.md`.
+# I used recursive function to implement the spiral order traversal. However, each function call makes at most one furher recursive call, which forms a linear recursive stack, visiting exactly m*n elements. Thus, the time complexity and the space complexity is both O(m*n). However, as the recursion forms a linear stack, we can use iterative approach to implement the same algorithm. For more details, refer to the README.md.
 
 # cf.) I used "if not is_valid(y_n, x_n) or is_visited[y_n][x_n]:" for termination condition in the recursive function. However, this could be replaced with "if len(ans) == m * n:", which is not redundant and more straightforward.
 
