@@ -1,7 +1,7 @@
-# problem: https://leetcode.com/problems/binary-tree-right-side-view/
 # submission: https://leetcode.com/problems/binary-tree-right-side-view/submissions/1621590619/
-
+# runtime: 0 ms (beats 100%), memory: 17.75 MB (beats 72.16%)
 # 7 min
+
 # TC: O(n), where n is the number of nodes in the tree
 # SC: O(n)
 
