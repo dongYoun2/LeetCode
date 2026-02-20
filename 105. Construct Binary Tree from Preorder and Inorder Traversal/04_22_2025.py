@@ -1,10 +1,12 @@
 # submission: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/submissions/1614624113/
-# runtime: 96 ms, memory: 89.12 MB
+# runtime: 96 ms (beats 19.14%), memory: 89.12 MB (beats 32.61%)
 
 # 19 min
 # TC: O(n^2 + n^2) -> O(n^2), where n is the number of nodes in the tree (worst-case: skewed tree)
 # - O(n^2) for search and O(n^2) for slicing
-# SC: O(n + n) -> O(n), recursion stack space + list slices (copying)
+# SC: O(h + n^2) -> O(n^2), where h is the height of the tree
+# - O(h): recursion stack space; worst-case (skewed tree): h == n, best-case (balanced tree): h == log n
+# - O(n^2): list slicing (copying) across all recursive calls
 
 # From LeetCode Top Interview 150 - Binary Tree General
 

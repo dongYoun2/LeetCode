@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/submissions/1795356617/
-# runtime: 101 ms, memory: 89.22 MB
-
+# runtime: 101 ms (beats 16.46%), memory: 89.22 MB (beats 32.19%)
 # 13 min
+
 # time and space complexity are identical to the "04_22_2025.py" solution.
 
 # refer to the "04_22_2025.py" for the detailed comments, and markdown file for the most efficient solution.

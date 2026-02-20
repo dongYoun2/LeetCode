@@ -5,7 +5,7 @@
 
 The code below is written by ChatGPT.
 
-- [Submission](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/submissions/1795368213/) (Runtime: 0 ms, Memory: 19.20 MB)
+- [Submission](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/submissions/1795368213/)—Runtime: 0 ms (beats 100%), Memory: 19.20 MB (beats 87.36%)
 - TC: $O(n)$, where $n$ is the number of nodes in the tree. (Time Complexity is optimized due to the hash table compared to the `10_08_2025.py` solution.)
 - SC: $O(n + n)$ -> $O(n)$, for the hash table and the recursion stack.
 
