@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/word-search/submissions/1647422137/
-# runtime: 5064 ms, memory: 17.8 MB
-
+# runtime: 5064 ms (beats 16.52%), memory: 17.8 MB (beats 83.26%)
 # 29 min
+
 # TC: O(m*n*3^w), where m is the number of rows, n is the number of columns, and w is the length of the word.
 # - We are exploring every possible path that starts from each cell.
 # - There are 3 directions to move from each cell since we are not revisiting the cell we just came from.

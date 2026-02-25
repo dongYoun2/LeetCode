@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/word-search/submissions/1816209835/
-# runtime: 5443 ms, memory: 18.14 MB
-
+# runtime: 5443 ms (beats 12.02%), memory: 18.14 MB (beats 83.26%)
 # 28 min
+
 # the time and space complexity is the same as the 05_28_2025.py solution.
 
 

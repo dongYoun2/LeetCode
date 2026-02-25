@@ -12,7 +12,7 @@ In the code below, there are three tricks (two with search pruning and one with 
 A final slight improvement is the **returning `True` directly** in the `dfs()` function's `for` loop if the rest of the word is found: as soon as one neighbor finds the rest of the word, we immediately return `True` and stop searching. This avoids unnecessary exploration and efficiently bubbles up the success—since we only need to check for **existence**, not **count occurrences**. (Note the difference in code from the `05_28_2025.py` solution, where we continue searching all neighbors even after finding a match.)
 
 
-- [Submission](https://leetcode.com/problems/word-search/submissions/1816238765/) (Runtime: 4 ms, Memory: 18.08 MB)
+- [Submission](https://leetcode.com/problems/word-search/submissions/1816238765/)—Runtime: 4 ms (beats 97.05%), Memory: 18.08 MB (beats 83.26%)
 - TC: $O(m*n*3^w)$, where $m$ is the number of rows, $n$ is the number of columns, and $w$ is the length of the word. Note that the time complexity is the same as the `05_28_2025.py` solution.
 - SC: $(w + m*n)$. Space complexity can be reduced to $O(w)$ by modifying the board in place to track path or set node's visited status, but I believe this is not the best practice.
 
