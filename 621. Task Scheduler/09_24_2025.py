@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/task-scheduler/submissions/1780827504/
-# runtime: 101 ms, memory: 20.01 MB
-
+# runtime: 101 ms (beats 57.25%), memory: 20.01 MB (beats 86.67%)
 # 55 min (including writing the wrong solution; 09_24_2025_wrong.py)
+
 
 # symbols:
 # - T: total task instances (length of tasks)

@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/task-scheduler/submissions/1780787724/
 # wrong Solution
-
 # 31 min
+
 
 # idea was that we can place "all" of the tasks with the highest frequency first, then fill the IDLE slots if needed. i repeated this process until all the tasks are placed while keeping track of the count of tasks.
 

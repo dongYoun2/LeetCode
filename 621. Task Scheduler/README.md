@@ -1,14 +1,14 @@
 [Problem](https://leetcode.com/problems/task-scheduler/)
 
 
-## Greedy with Priority Queue
+## Greedy with Priority Queue: Picking the Most Frequent Task First
 
 
 The code below is the optimized version of the solution in `09_24_2025.py`. Instead of building the intervals, we only need to return the number of intervals (time).
 
 To achieve this, we only need to store the frequency of each task, and we can accumulate the elapsed time every cycle (or batch), which is simply `n + 1`. One caveat is that for the last cycle, we don't need the full `n + 1` time, but the number of tasks that are processed in the last cycle.
 
-[Submission](https://leetcode.com/problems/task-scheduler/submissions/1781571914/) (Runtime: 64 ms, Memory: 19.23 MB)
+[Submission](https://leetcode.com/problems/task-scheduler/submissions/1781571914/)—Runtime: 64 ms (beats 71.15%), Memory: 19.23 MB (beats 96.13%)
 
 
 Symbols:
@@ -36,31 +36,47 @@ class Solution:
             return len(tasks)
 
         freq = Counter(tasks).values()
-        heap = [-c for c in freq]
 
+        heap = [-c for c in freq]
         heapq.heapify(heap)
 
         time = 0
-        while heap:
-            executed = 0
-            to_requeue = []
 
+        # Continue until all tasks are done
+        while heap:
+            executed = 0        # number of tasks executed in this cycle
+            to_requeue = []     # tasks that still have remaining count
+
+            # Try to execute up to (n+1) different tasks
             for _ in range(n + 1):
                 if not heap:
                     break
-                cnt = heapq.heappop(heap) + 1  # run one instance
+
+                # Pop most frequent remaining task
+                cnt = heapq.heappop(heap) + 1
+
                 executed += 1
+
+                # If task still has remaining instances, requeue later
                 if cnt < 0:
                     to_requeue.append(cnt)
 
+            # Push unfinished tasks back into heap
             for cnt in to_requeue:
                 heapq.heappush(heap, cnt)
 
+            # If heap still has tasks,
+            # we must count full cycle of (n+1)
+            # otherwise count only actual executed
             time += (n + 1) if heap else executed
 
         return time
 
 ```
+
+
+cf.) There's another greeddy solution with a different priority; chooising **the earliest available task** first. refer to the `02_28_2026.py` for more details.
+
 
 ## Filling the Vacant Slots with Sorting
 
@@ -71,7 +87,7 @@ Additionally, we can optimize the sorting to simply using the max frequency, whi
 cf.) Further extending this approach would lead to a math formula solution. Refer to the [Editorial's Approach 4](https://leetcode.com/problems/task-scheduler/editorial/#approach-4-using-math-formula) for more details.
 
 
-- [Submission](https://leetcode.com/problems/task-scheduler/submissions/1781657297/) (Runtime: 19 ms, Memory: 19.00 MB)
+- [Submission](https://leetcode.com/problems/task-scheduler/submissions/1781657297/)—Runtime: 19 ms (beats 83.36%), Memory: 19.00 MB (beats 99.57%)
 - TC: $O(T + K \log K + K)$ -> $O(T + K \log K)$ -> $O(T)$ (since $K$ is bounded)
   - Building Counter: $O(T)$
   - Sorting (`most_common()`): $O(K \log K)$
