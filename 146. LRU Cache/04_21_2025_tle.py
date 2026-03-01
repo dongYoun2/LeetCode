@@ -1,7 +1,7 @@
-# problem: https://leetcode.com/problems/lru-cache/
 # submission: https://leetcode.com/problems/lru-cache/submissions/1613612409/
-
+# time limit exceeded (TLE)
 # 57 min
+
 # TC: get - O(n), put - O(n), where n is the number of nodes in the linked list
 # SC: LRU Cache - O(capacity), auxiliary space per operation (get/put) - O(1)
 

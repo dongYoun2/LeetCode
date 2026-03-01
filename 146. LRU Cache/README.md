@@ -1,13 +1,16 @@
 [Problem](https://leetcode.com/problems/lru-cache/)
 
 The three solutions below all perform with the equivalent complexity:
+
 - TC: `get()` and `put()` operations in $O(1)$
 - SC: structural space (LRU Cache) - $O(capacity)$, auxiliary space per operation (get/put) - $O(1)$
-<br>
+
+  
+
 
 ## Doubly Linked List with Hashmap (From Scratch)
 
-- [Submission](https://leetcode.com/problems/lru-cache/submissions/1614175674)
+- [Submission](https://leetcode.com/problems/lru-cache/submissions/1614175674)—Runtime: 135 ms (beats 42.37%), Memory: 78.28 MB (beats 26.03%)
 
 ```python
 class DListNode: # doubly linked list's node
@@ -75,13 +78,15 @@ class LRUCache:
 # obj.put(key,value)
 
 ```
-<br>
+
+  
+
 
 ## Using Python dictionary
 
 Python 3 dictionary stores key-value pairs in order. To perform `put()` in $O(1)$ time, we can use `next(iter())`, which emulates the behavior of `OrderedDict`'s `popitem(last=False)` ([reference](https://docs.python.org/3/library/collections.html#collections.OrderedDict:~:text=The%20popitem(),if%20it%20exists.)).
 
-- [Submission](https://leetcode.com/problems/lru-cache/submissions/1614180369/)
+- [Submission](https://leetcode.com/problems/lru-cache/submissions/1614180369/)—Runtime: 109 ms (beats 76.90%), Memory: 78.21 MB (beats 26.03%)
 
 ```python
 class LRUCache:
@@ -113,11 +118,13 @@ class LRUCache:
 # obj.put(key,value)
 
 ```
-<br>
+
+  
+
 
 ## Using Python `OrderedDict`
 
-- [Submission](https://leetcode.com/problems/lru-cache/submissions/1614182763/)
+- [Submission](https://leetcode.com/problems/lru-cache/submissions/1614182763/)—Runtime: 99 ms (beats 87.16%), Memory: 78.42 MB (beats 25.48%)
 
 ```python
 from collections import OrderedDict
@@ -148,4 +155,5 @@ class LRUCache:
 # obj.put(key,value)
 
 ```
-<br>
+
+  

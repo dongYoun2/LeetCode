@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/lru-cache/submissions/1782636333/
-# runtime: 119 ms, memory: 78.06 MB
-
+# runtime: 119 ms (beats 64.59%), memory: 78.06 MB (beats 27.06%)
 # 50 min
+
 # TC: O(1), for get and put
 # SC: O(n), `key_to_node` and keeping doubly linked list
 
