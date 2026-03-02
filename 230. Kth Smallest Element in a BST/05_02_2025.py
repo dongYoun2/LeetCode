@@ -1,7 +1,7 @@
-# problem: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 # submission: https://leetcode.com/problems/kth-smallest-element-in-a-bst/submissions/1623595448/
-
+# runtime: 2 ms (beats 34.73%), memory: 21.11 MB (beats 91.44%)
 # 10 min
+
 # TC: O(n), where n is the number of nodes in the tree
 # SC: O(n) (recursion stack)
 
