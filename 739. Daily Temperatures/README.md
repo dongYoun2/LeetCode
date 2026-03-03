@@ -3,7 +3,7 @@
 ## Monotonic Stack Approach
 
 
-The core idea is to maintain a monotonic (decreasing) stack. We are storing the indices of the temperatures, where those temperatures are in descending order. (You can find the simulation in the Editoral section)
+The core idea is to maintain a monotonic (decreasing) stack. We are storing the indices of the temperatures, where those **temperatures** are in **descending** order. (You can find the simulation in the Editoral section)
 
 cf.) **Monotonic stack is commonly used** to solve problems where you need to quickly find the next greater element, next smaller element, previous greater element, or previous smaller element in an array.
 
@@ -11,7 +11,7 @@ Example problems includes: Largest Rectangle in Histogram, Trapping Rain Water, 
 
 
 
-- [Submission](https://leetcode.com/problems/daily-temperatures/submissions/1781394089/) (Runtime: 88 ms, Memory: 26.92 MB)
+- [Submission](https://leetcode.com/problems/daily-temperatures/submissions/1781394089/)—Runtime: 88 ms (Beats 77.12%), Memory: 26.92 MB (Beats 95.22%)
 - TC: $O(N)$, where N is the length of temperatures
 - SC: $O(N)$
 

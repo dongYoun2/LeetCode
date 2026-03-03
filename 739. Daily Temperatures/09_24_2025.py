@@ -1,5 +1,5 @@
 # submission: https://leetcode.com/problems/daily-temperatures/submissions/1781356057/
-# runtime: 2445 ms, memory: 26.42 MB
+# runtime: 2445 ms (beats 5.04%), memory: 26.42 MB (beats 96.72%)
 
 # 43 min (includes writing time limit exceeded code; 09_24_2025_tle.py)
 # TC: O(N * K), where N is the length of temperatures and K is the number of possible temperatures (30 <= temperature <= 100)
