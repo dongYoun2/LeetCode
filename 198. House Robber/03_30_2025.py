@@ -1,7 +1,7 @@
-# problem: https://leetcode.com/problems/house-robber/
 # submission: https://leetcode.com/problems/house-robber/submissions/1591435417/
-
+# runtime: 0 ms (beats 100.00%), memory: 17.70 MB (beats 95.11%)
 # 7 min
+
 # TC: O(n)
 # SC: O(n)
 

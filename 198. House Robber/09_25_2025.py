@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/house-robber/submissions/1781882713/
-# runtime: 0 ms, memory: 17.70 MB
-
+# runtime: 0 ms (beats 100.00%), memory: 17.70 MB (beats 95.12%)
 # 6 min
+
 # TC: O(n), where n is the length of nums
 # SC: O(n), for dp array
 
