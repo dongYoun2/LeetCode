@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/gas-station/submissions/1765008222/
-# runtime: 27 min, memory: 23.8 MB
-
+# runtime: 27 min (beats 50.15%), memory: 23.8 MB (beats 99.92%)
 # 43 min
+
 # TC: O(n), where n is the length of gas (or cost)
 # SC: O(n) - tank array
 # cf.) SC can be reduced to O(1) by computing tank on the fly instead of storing it in an array
