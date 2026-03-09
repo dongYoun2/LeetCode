@@ -1,7 +1,7 @@
-# problem: https://leetcode.com/problems/group-anagrams/
 # submission: https://leetcode.com/problems/group-anagrams/submissions/1598766103/
-
+# runtime: 11 ms (beats 84.79%), memory: 20.52 MB (beats 100.00%)
 # 15 min
+
 # TC: O(N * K log K) where N is the number of strings and K is the maximum length of a string
 # SC: O(N * K)
 
