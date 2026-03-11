@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/design-add-and-search-words-data-structure/submissions/1636825205/
-# runtime: 1405 ms, memory: 52.6 MB
-
+# runtime: 1405 ms (beats 13.34%), memory: 52.6 MB (beats 96.76%)
 # 44 min
+
 # TC:
 # - addWord: O(L), where L is the length of the `word`
 # - search: O((L-k)*d^k) -> O(L*d^k) -> O(L), where k (<=2) is the number of "." (wildcards) in a search string and d (=26, size of the lowercase‐English alphabet) is the dimension of alphabets in a trie. Since k is negligible and d is fixed in this problem, we can regard both as constants.

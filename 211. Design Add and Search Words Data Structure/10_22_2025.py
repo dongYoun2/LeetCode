@@ -1,15 +1,15 @@
 # submission: https://leetcode.com/problems/design-add-and-search-words-data-structure/submissions/1808614553/
-# runtime: 1386 ms, memory: 67.99 MB
-
+# runtime: 1386 ms (beats 13.84%), memory: 67.99 MB (beats 63.87%)
 # 30 min
+
 # refer to the 05_16_2025.py for the time and space complexity analysis.
 
 # pretty straightforward to implement using trie and dfs traversal. however, spent some time debugging, but realized that first i didn't call the `dfs` function in the `search` method, then again, find out that i didn't put the `return` before the dfs() function call.. lol
 
-# saerch method can be slightly optimized by:
+# search method can be slightly optimized by:
 # 1. pasing index to the `dfs` function instead of slicing the string.
-# 2. iteratively traverse the trie when the character is not a wildcard. This allows for avoiding extra recursion stack frames.
-# the improved code can be found at: https://leetcode.com/problems/design-add-and-search-words-data-structure/submissions/1808631470/ (runtime: 1204 ms, memory: 68.0 MB)
+# 2. "iteratively" (instead of recursively) traverse the trie when the character is not a wildcard. This allows for avoiding extra recursion stack frames.
+# the improved version can be found at: https://leetcode.com/problems/design-add-and-search-words-data-structure/submissions/1808631470/—runtime: 1204 ms (beats 20.42%), memory: 68.0 MB (beats 63.87%)
 
 
 class TrieNode:
