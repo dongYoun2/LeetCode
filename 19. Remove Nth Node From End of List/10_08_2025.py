@@ -1,8 +1,8 @@
 # submission: https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/1795330156/
-# runtime: 0 ms, memory: 17.9 MB
+# runtime: 0 ms (beats 100.00%), memory: 17.85 MB (beats 100.00%)
+# 7 min
 # this solution solves the follow-up question with a constant space
 
-# 7 min
 # TC: O(n), where n is the number of nodes in the linked list
 # SC: O(1)
 

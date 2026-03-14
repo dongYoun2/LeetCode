@@ -7,8 +7,9 @@ The below uses a two-pointer approach to solve the follow-up question. Although 
 Just like the [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/), I realized it's always good to keep in mind that the **two-pointer algorithm** can be beneficial for solving linked list-related problems with only a constant space.
 <br>
 
-- [Submission](https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/1609523240/)
-- TC: $O(n)$, where n is the number of nodes in the linked list
+[Submission](https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/1609523240/)—Runtime: 0 ms (Beats 100.00%), Memory: 17.62 MB (Beats 100.00%)
+
+- TC: $O(n)$, where $n$ is the number of nodes in the linked list
 - SC: $O(1)$
 
 ```python

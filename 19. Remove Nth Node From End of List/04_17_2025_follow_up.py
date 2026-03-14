@@ -1,14 +1,14 @@
-# problem: https://leetcode.com/problems/linked-list-cycle/
 # submission: https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/1609502562/
-# this solutoin solves the follow-up question but with extra space
-
+# runtime: 0 ms (beats 100.00%), memory: 17.72 MB (beats 100.00%)
 # 7 min
+# this solution solves the follow-up question but with extra space. i think the purpose of this question is to make us think about the two-pointer approach. for that, refer to the markdown file.
+
 # TC: O(n), where n is the number of nodes in the linked list (one-pass alg.)
 # SC: O(n) (`nodes` array)
 
 # From LeetCode Top Interview 150 - Linekd List
 
-# The follow-up question requires solving it in one pass. I used the `nodes` array to allow the indexing of the node to be removed. However, using an array for the convenience of indexing in the linked list-related problems is usually not the best solution nor a good practice since it requires the additional O(n) space. Instead, the two-pointer approach can also be done in one pass with constant space. For more details, refer to the markdown file.
+# The follow-up question requires solving it in one pass. I used the `nodes` array to allow the indexing of the node to be removed. However, using an array for the convenience of indexing in the linked list-related problems is usually not the best solution nor a good practice since it requires the additional O(n) space. Instead, the two-pointer approach can also be done in one pass with constant space (markdown file).
 
 
 # Definition for singly-linked list.

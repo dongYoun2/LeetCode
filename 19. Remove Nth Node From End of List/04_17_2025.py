@@ -1,7 +1,7 @@
-# problem: https://leetcode.com/problems/linked-list-cycle/
 # submission: https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/1609496566/
-
+# runtime: 0 ms (beats 100.00%), memory: 17.69 MB (beats 100.00%)
 # 9 min
+
 # TC: O(n + n) -> O(n), where n is the number of nodes in the linked list (two-pass alg.)
 # SC: O(1)
 
