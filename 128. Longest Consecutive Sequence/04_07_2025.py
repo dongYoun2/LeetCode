@@ -1,12 +1,12 @@
-# problem: https://leetcode.com/problems/longest-consecutive-sequence/
 # submission: https://leetcode.com/problems/longest-consecutive-sequence/submissions/1600160547/
-
+# runtime: 59 ms (beats 25.61%), memory: 39.02 MB (beats 12.75%)
 # 54 min (includes writing memory limit exceeded code (04_07_2025_mle.py))
+
 # TC: O(n), where n is the number of elements in nums
 # SC: O(n)
 
 
-# Knew that I had to use hash map since I am solving problems based on the algorithm type.
+# Knew that I had to use hash map since I was solving problems based on the algorithm type.
 
 # After getting memory limit exceeded from the "04_07_2025_mle.py", I came up with this solution. Howver, I think there would be a better implementation (and approach) than this since there are some redundancy in the code.
 
@@ -18,9 +18,9 @@
 
 # Also, to exclude the numbers that has already been counted, I used the `visited` set to keep track of them.
 
-# Just now, after looking at the Editorial's approach 3, I realized that I don't have to consider both directions, that is, n-1 and n+1, at the same time. Rather I could just check  n-1 after ensuring that the n+1 doesn't exist in `nums` (or equivalently, checking only n+1 after ensuring that the n-1 doesn't exist). This is because we can guarantee that we will always  check the consecutive sequence starting from the maximum (or minimum) number of the sequence while iterating through `nums`.
+# Just now, after looking at the Editorial's approach 3, I realized that I don't have to consider both directions, that is, n-1 and n+1, at the same time. Rather I could just check n-1 after ensuring that the n+1 doesn't exist in `nums` (or equivalently, checking only n+1 after ensuring that the n-1 doesn't exist; this is the README.md implementation). This is because we can guarantee that we will always check the consecutive sequence starting from the maximum (or minimum) number of the sequence while iterating through `nums`.
 
-# cf.) This question could also be solved using a union-find data structure.
+# cf.) This question could also be solved using a disjoint set (union-find) data structure.
 
 
 class Solution:
