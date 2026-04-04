@@ -9,7 +9,7 @@
 # search method can be slightly optimized by:
 # 1. pasing index to the `dfs` function instead of slicing the string.
 # 2. "iteratively" (instead of recursively) traverse the trie when the character is not a wildcard. This allows for avoiding extra recursion stack frames.
-# the improved version can be found at: https://leetcode.com/problems/design-add-and-search-words-data-structure/submissions/1808631470/—runtime: 1204 ms (beats 20.42%), memory: 68.0 MB (beats 63.87%)
+# the improved version can be found at: https://leetcode.com/problems/design-add-and-search-words-data-structure/submissions/1808631470/ — runtime: 1204 ms (beats 20.42%), memory: 68.0 MB (beats 63.87%)
 
 
 class TrieNode:

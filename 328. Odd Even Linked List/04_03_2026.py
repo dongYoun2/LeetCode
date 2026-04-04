@@ -9,7 +9,7 @@
 
 # the below approach is pretty straightforward. we build two separate linked lists (odd and even), then merge them. one caveat is we need `even_curr.next = None` at the end. Otherwise, we may have a cycle in the merged linked list.
 
-# another method that uses less memory than this approach is to rewire the nodes in-place while taversing the main linked list. for details, refer to the submission: https://leetcode.com/problems/odd-even-linked-list/submissions/1968030020/—runtime: 0 ms (beats 100.00%), memory: 20.82 MB (beats 99.51%)
+# another method that uses less memory than this approach is to rewire the nodes in-place while taversing the main linked list. for details, refer to the submission: https://leetcode.com/problems/odd-even-linked-list/submissions/1968030020/ — runtime: 0 ms (beats 100.00%), memory: 20.82 MB (beats 99.51%)
 
 
 # Definition for singly-linked list.
