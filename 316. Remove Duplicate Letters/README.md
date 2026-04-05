@@ -36,6 +36,6 @@ class Solution:
 
 ```
 
-I spent around 50 minutes to solve this problem, but I couldn't though I knew that I had to use the stack data structure. In addition to using stack, the problem requires to solve it in a greedy manner. For me, I always feel like greedy problems are tough to come up with a solution. I guess I need some more practice.
+I spent around 50 minutes to solve this problem, but I couldn't solve it though I knew that I had to use the stack data structure. In addition to using stack, the problem requires to solve it in a greedy manner. For me, I always feel like greedy problems are tough to come up with a solution. I guess I need some more practice.
 
 cf.) Instead of using the `Counter`, we can build a **last occurence index map** for each character, and use it to determine if a character can be removed from the stack (Editorial's Approach 2). The time and space complexity are the same as the above solution. One intersting thing is that last occurence map can be created with `last_occurrence = {c: i for i, c in enumerate(s)}`. In dictionary comprehension, duplicate characters (keys) will be simply replaced by the last occurrence. For more details, refer to the Editorial's Approach 2.
