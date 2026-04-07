@@ -1,7 +1,10 @@
 # submission: https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/1768839893/
-# runtime: 11 ms, memory: 17.7 MB
-
+# runtime: 11 ms (beats 77.01%), memory: 17.75 MB (beats 100.00%)
 # 16 min
+
+# TC: O(n)
+# SC: O(n) (`bag` set)
+
 
 # from the input range constraint, i noticed this problem has to be solved in O(n log n) time, and since it didn't seem like requiring sorting, or binary search logics, which generally has log n term in time complexity, i though this can be solved in O(n) time. trying with additional example ('dbcb') other than given in the test cases, i found out i can solve it with the sliding window technique.
 

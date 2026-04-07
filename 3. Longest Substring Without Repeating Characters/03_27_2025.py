@@ -1,7 +1,7 @@
-# problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 # submission: https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/1588646885/
-
+# runtime: 23 ms (beats 17.67%), memory: 17.65 MB (beats 100.00%)
 # 13 min
+
 # TC: O(n^2) (This is because the membership check on the python slice is O(n). We can optimize this to O(1) by using a hash table (set or dictionary))
 # SC: O(n) (due to the python slice)
 

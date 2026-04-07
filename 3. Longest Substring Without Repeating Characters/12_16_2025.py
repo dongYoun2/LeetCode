@@ -1,7 +1,10 @@
 # submission: https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/1857553904/
-# runtime: 35 ms, memory: 18.1 MB
-
+# runtime: 35 ms (beats 13.68%), memory: 18.09 MB (beats 100.00%)
 # 14 min
+
+# TC: O(n)
+# SC: O(n) (`seen` set)
+
 
 # technically, fifth time solving this problem since 04/10/2024. instinctively noticed that i might have to use the sliding window technique. after a few simulations, i started to implement the code.
 
