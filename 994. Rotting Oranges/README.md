@@ -6,7 +6,7 @@ The logic is exactly the same as the `01_16_2025.py` solution, but removed unnec
 
 - [Submission](https://leetcode.com/problems/rotting-oranges/submissions/1887235538/) (Runtime: 7 ms, Memory: 19.40 MB)
 - TC: $O(m*n)$, where $m$ is the number of rows and $n$ is the number of columns in the grid.
-  - first double loop: $O(m*n)$
+  - first nested loop: $O(m*n)$
   - BFS: $O(m*n*4) -> O(m*n)$
 - SC: $O(m*n)$
 
