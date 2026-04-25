@@ -1,6 +1,7 @@
 # submission: https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/submissions/1987203398/
 # runtime: 190 ms (beats 35.18%), memory: 19.71 MB (beats 37.68%)
 # 8 min
+# solved with the sliding window technique
 
 # TC: O(2n) -> O(n)
 # SC: O(1) (at most 2 distinct characters in a hash table)
