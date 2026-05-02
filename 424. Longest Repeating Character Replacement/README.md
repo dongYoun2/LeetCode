@@ -35,19 +35,49 @@ class Solution:
         return res
 
 ```
+<br>
 
 
-
-
-## Sliding Window per Target Character (Intuitive)
-
-
-
-[Submission](https://leetcode.com/problems/longest-repeating-character-replacement/submissions/1971849871/)—Runtime: 303 ms (beats 5.79%), Memory: 19.66 MB (beats 65.54%)
-
+## Sliding Window (Intuitive)
 
 - TC: $O(26n) \rightarrow O(n)$
 - SC: $O(1)$
+
+### Exact `max_freq` (O(26) Recompute per Step)
+
+The idea is to find the maximum frequency of the current window state, which takes $O(26)$ time. Then, we can check if the current window state satisfies the condition simply by comparing the 1) `window size` - `maximum frequency` and 2) `k`.
+
+This appraoch is similar to the ["Sliding Window (Optimal)"](#sliding-window-optimal) approach, but insetad of maintaining the stale maximum frequency, we compute the exact maximum frequency with `max(count.values())` at each step.
+
+[Submission](https://leetcode.com/problems/longest-repeating-character-replacement/submissions/1993596461/)—Runtime: 154 ms (beats 20.37%), Memory: 19.64 MB (beats 51.50%)
+
+
+```python
+from collections import defaultdict
+
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        count = defaultdict(int)
+        left = ans = 0
+
+        for right in range(len(s)):
+            # expand window
+            count[s[right]] += 1
+
+            # shrink if invalid
+            while (right - left + 1) - max(count.values()) > k:
+                count[s[left]] -= 1
+                left += 1
+
+            ans = max(ans, right - left + 1)
+
+        return ans
+
+```
+
+### Per Target Character (26 Passes; 1 Pass per Character)
+
+[Submission](https://leetcode.com/problems/longest-repeating-character-replacement/submissions/1971849871/)—Runtime: 303 ms (beats 5.79%), Memory: 19.66 MB (beats 65.54%)
 
 ```python
 class Solution:
@@ -73,14 +103,14 @@ class Solution:
         return res
 
 ```
-
+<br>
 
 
 ## Sliding Window (Optimal)
 
 The key idea is whether we can replace characters `k` times in a window except for the most ferquent character. So we have to maintain the `window size` - `frequency of the most frequent character within the window` less than or equal to `k`.
 
-One important point is that in the implementation level however, we don't actually decrement the maximum frequency, so this value doesn't always match with every state of the window. In words, `max_freq` is stale (so techincally, `max_freq` represents the frequency of the most frequent character we have seen so far instead of the frequency of the most frequent character within the currentwindow). Still, the correctness of the solution doesn't break because an overestimate of `max_freq` may only delay the shrinkage of the window, which is not a problem.
+One important point is that in the implementation level however, we don't actually decrement the maximum frequency, so this value doesn't always match with every state of the window. In words, `max_freq` is stale (so techincally, `max_freq` represents the frequency of the most frequent character we have seen so far instead of the frequency of the most frequent character within the current window; refer to the Editorial's Approach 3 "Sliding Window (Fast)" to see the visual simulation for more straightforward explanation). Still, the correctness of the solution doesn't break because an overestimate of `max_freq` may only delay the shrinkage of the window, which is not a problem.
 
 
 [Submission](https://leetcode.com/problems/longest-repeating-character-replacement/submissions/1971765000/)—Runtime: 89 ms (beats 49.34%), Memory: 19.81 MB (beats 8.00%)
