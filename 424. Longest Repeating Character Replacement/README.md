@@ -47,9 +47,9 @@ class Solution:
 
 The idea is to find the maximum frequency of the current window state, which takes $O(26)$ time. Then, we can check if the current window state satisfies the condition simply by comparing the 1) `window size` - `maximum frequency` and 2) `k`.
 
-This appraoch is similar to the ["Sliding Window (Optimal)"](#sliding-window-optimal) approach, but insetad of maintaining the stale maximum frequency, we compute the exact maximum frequency with `max(count.values())` at each step.
+This appraoch is similar to the [Sliding Window (Optimal)](#sliding-window-optimal) approach, but insetad of maintaining the stale maximum frequency, we compute the exact maximum frequency with `max(count.values())` at each step.
 
-[Submission](https://leetcode.com/problems/longest-repeating-character-replacement/submissions/1993596461/)—Runtime: 154 ms (beats 20.37%), Memory: 19.64 MB (beats 51.50%)
+[Submission](https://leetcode.com/problems/longest-repeating-character-replacement/submissions/1993596461/)—Runtime: 143 ms (beats 28.63%), Memory: 19.75 MB (beats 15.77%)
 
 
 ```python
