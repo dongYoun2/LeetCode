@@ -1,7 +1,8 @@
-# problem: https://leetcode.com/problems/minimum-size-subarray-sum/
 # submission: https://leetcode.com/problems/minimum-size-subarray-sum/submissions/1588557086/
-
+# runtime: 11 ms (beats 47.72%), memory: 28.46 MB (beats 100.00%)
 # 12 min
+# solved with a sliding window technique
+
 # TC: O(n)
 # SC: O(1)
 
