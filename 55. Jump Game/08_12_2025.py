@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/jump-game/submissions/1732317544/
-# runtime: 21 ms, memory: 18.6 MB
-
+# runtime: 21 ms (beats 51.89%), memory: 18.6 MB (beats 100.00%)
 # 16 min
+
 # TC: O(n), where n is the length of nums
 # SC: O(1)
 

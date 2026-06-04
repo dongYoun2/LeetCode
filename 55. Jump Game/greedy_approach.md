@@ -6,12 +6,12 @@
 
 This problem is actually more natural and straightforward to solve by iterating in the reverse order. (DP approach can also iterate both from the beginning and the end, but it is more intuitive to iterate through backwards. Refer to the Editorial section for more details on the DP solutions.)
 
-- [Submission](https://leetcode.com/problems/jump-game/submissions/1735528698/)
-- Runtime: 26 ms, Memory: 18.8 MB
+[Submission](https://leetcode.com/problems/jump-game/submissions/1735528698/)—Runtime: 11 ms (beats 92.56%), Memory: 18.61 MB (beats 100.00%)
+
 - TC: $O(n), where $n$ is the length of `nums`.
 - SC: $O(1)$
 
-<br>
+
 
 ```python
 class Solution:
@@ -36,12 +36,11 @@ class Solution:
 
 We only keep track of the maximum reachable index `maxReach`. `curr_idx`, which indicates the current index in `08_12_2025.py`, is actually not necessary, as we can use the loop index `i` directly.
 
-- [Submission](https://leetcode.com/problems/jump-game/submissions/1732338600/)
-- Runtime: 11 ms, Memory: 18.6 MB
+[Submission](https://leetcode.com/problems/jump-game/submissions/1732338600/)—Runtime: 26 ms (beats 32.99%), Memory: 18.77 MB (beats 100.00%)
+
 - TC: $O(n)$
 - SC: $O(1)$
 
-<br>
 
 ```python
 class Solution:
