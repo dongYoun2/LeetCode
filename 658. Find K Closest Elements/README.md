@@ -2,7 +2,7 @@
 
 
 
-## Binary Search on Window (Optimal w.r.t. TC)
+## Binary Search on Window Start Index (Optimal w.r.t. TC)
 
 The key idea is to perform binary search on the window of size `k` that contains `k` closest elements to `x`. Specifically, the target index is the left boundary (or the starting index) of this window.
 
@@ -11,7 +11,7 @@ The key idea is to perform binary search on the window of size `k` that contains
 [Submission](https://leetcode.com/problems/find-k-closest-elements/submissions/1970996737/)—Runtime: 0 ms (beats 100.00%), Memory: 20.62 MB (beats 71.21%)
 
 
-- TC: $O(\log (n-k)$
+- TC: $O(\log (n-k))$
 - SC: $O(1)$
 
 
@@ -77,6 +77,30 @@ class Solution:
 
 ```
 
+cf.) To make `l` and `r` inclusive, we can simply start with the empty window by initializing `l` and `r` to `pos` and `pos - 1`, respectively, but then we need to change some conditions a bit in the `while` loop, and the final answer would be `arr[l:r + 1]`.
+
+```python
+import bisect
+from typing import List
+
+class Solution:
+    def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
+        pos = bisect.bisect_left(arr, x)
+
+        l, r = pos, pos - 1  # empty inclusive window
+
+        while r - l + 1 < k:
+            if l == 0:
+                r += 1
+            elif r == len(arr) - 1:
+                l -= 1
+            elif x - arr[l - 1] <= arr[r + 1] - x:
+                l -= 1
+            else:
+                r += 1
+
+        return arr[l:r + 1]
+```
 
 
 
