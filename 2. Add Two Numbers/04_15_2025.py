@@ -1,9 +1,10 @@
-# problem: https://leetcode.com/problems/add-two-numbers/
 # submission: https://leetcode.com/problems/add-two-numbers/submissions/1607668361/
-
+# runtime: 3 ms (beats 66.08%), memory: 17.75 MB (beats 100.00%)
 # 14 min
+
 # TC: O(max(m, n)), where m and n are the lengths of the two linked lists.
 # SC: O(1) (since the answer space is not counted. If counted, the SC is O(max(m, n) + 1), and plus 1 for the dummy node)
+
 
 # From LeetCode Top Interview 150 - Linekd List
 
