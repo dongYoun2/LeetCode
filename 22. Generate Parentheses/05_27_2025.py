@@ -1,6 +1,7 @@
 # submission: https://leetcode.com/problems/generate-parentheses/submissions/1646134677/
-
+# runtime: 0 ms (beats 100.00%), memory: 18.12 MB (beats 100.00%)
 # 17 min
+# solved with backtracking
 
 # TC: O(2^{2n} / n^{1/2}) -> O(4^n / n^{1/2}), where n is the number of pairs of parentheses.
 # - The n-th Catalan number (C_n) (the number of valid parentheses strings of length 2n) is C_n \;=\;\frac{1}{n+1}\binom{2n}{n}\;\approx\;\frac{4^n}{n^{3/2}\sqrt{\pi}}. The number of solutions is exactly the C_n of them, and for each solution, we write down a complete string (O(n)). Hence, the final time complexity is O(C_n * n) = O(4^n / n^{1/2} * n) = O(4^n / n^{1/2}).
