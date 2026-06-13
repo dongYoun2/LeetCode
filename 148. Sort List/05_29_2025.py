@@ -1,7 +1,8 @@
 # submission: https://leetcode.com/problems/sort-list/submissions/1648431841/
-
+# runtime: 261 ms (beats 7.98%), memory: 32.84 MB (beats 100.00%)
 # 33 min
-# runtime: 214 ms, memory: 32.91 MB
+# solved with divide and conquer (implementing recursive merge sort)
+
 # TC: O(n log n), where n is the number of nodes in the linked list.
 # SC: O(log n) (for the recursive stack sapce)
 

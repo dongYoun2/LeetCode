@@ -1,7 +1,8 @@
 # submission: https://leetcode.com/problems/sort-list/submissions/1648453641/
-
+# runtime: 26 ms (beats 91.36%), memory: 32.82 MB (beats 100.00%)
 # 3 min
-# runtime: 26 ms, memory: 32.82 MB
+# solved with Python's built-in sorting
+
 # TC: O(n log n), where n is the number of nodes in the linked list.
 # SC: O(2*n) -> O(n). one for the array to store the nodes and the other for Python timsort.
 
