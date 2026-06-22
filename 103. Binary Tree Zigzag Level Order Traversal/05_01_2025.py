@@ -1,9 +1,11 @@
-# problem: https: // leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
 # submission: https: // leetcode.com/problems/binary-tree-zigzag-level-order-traversal/submissions/1622741355/
-
+# runtime: 0 ms (beats 100.00%), memory: 17.97 MB (beats 100.00%)
 # 17 min
+# solved using bfs
+
 # TC: O(n), where n is the number of nodes in the tree.
 # SC: O(n)
+
 
 # From LeetCode Top Interview 150 - Binary Tree BFS
 
