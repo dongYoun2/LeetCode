@@ -1,13 +1,15 @@
-# problem: https://leetcode.com/problems/kth-largest-element-in-an-array/
 # submission: https://leetcode.com/problems/kth-largest-element-in-an-array/submissions/1590380972/
-
+# runtime: 93 ms (beats 48.90%), memory: 28.51 MB (beats 99.94%)
 # 2 min
-# TC: O(n + k log n) (Building heap and popping k times. Worst-case time complexity is O(n log n).)
+# solved using heap
+
+# TC: O(n + k log n) (Building heap (O(n)) and popping k times (O(k log n)). Worst-case time complexity is O(n log n).)
 # SC: O(n)
+
 
 # The question asks to be solved using something other than sorting. I knew that the quickselect algorithm could solve this problem since it is well known to be one of the most efficient algorithms for finding the K-th largest or smallest element in the array. Also, I knew that I could use heap since I'm currently solving questions based on the algorithm type. Lastly, the LeetCode Editorial introduces 'counting sort' as a solution as well.
 
-# While maintaining the heap data structure, the below code can be further optimized for the time complexity to be O(n log k) by using a min-heap of size k. This is more efficient, especially when k is small relative to n. For more details and the code itself, refer to the LeetCode Editorial.
+# While maintaining the heap data structure, the below code can be further optimized for the time complexity to be O(n log k) by using a min-heap of size k. This is more efficient, especially when k is small relative to n. For more details and the code itself, refer to the "LeetCode Editorial's Approach 2: Min-Heap" section.
 
 
 import heapq
