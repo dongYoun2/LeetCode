@@ -1,9 +1,11 @@
 # submission: https://leetcode.com/problems/maximal-square/submissions/1719833561/
-# runtime: 113 ms, memory: 33 MB
-
+# runtime: 113 ms (beats 31.22%), memory: 32.96 MB (beats 77.41%)
 # 21 min
+# solved using DP
+
 # TC: O(m * n), where m is the number of rows and n is the number of columns in the matrix.
 # SC: O(m * n), for the dp table. (can make it to O(1) by updating the matrix in place, but i believe it's not the best practice.)
+
 
 # From LeetCode Top Interview 150 - Multidimensional DP
 
