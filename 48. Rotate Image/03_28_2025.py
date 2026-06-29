@@ -1,9 +1,10 @@
-# problem: https://leetcode.com/problems/rotate-image/
 # submission: https://leetcode.com/problems/rotate-image/submissions/1589360459/
-
+# runtime: 0 ms (beats 100.00%), memory: 17.76 MB (beats 100.00%)
 # 10 min
+
 # TC: O(n^2 + n^2) -> O(n^2), where n is the length of the square matrix
 # SC: O(1)
+
 
 # First, I found out that I can solve the problem by rotating group of four cells. For example,
 
@@ -12,13 +13,14 @@
 # 3. bottom-right corner element -> bottom-left corner element
 # 4. bottom-left corner element -> top-left corner element
 
-# We can do this for each and every outer layer of the matrix.
-# However, this approach felt a bit confusing. Meanwhile, I realized that rotating 90 degrees clockwise is also equivalent to:
+# We can do apply this algorithm for each and every layer of the matrix (from the outer most layer to the inner most layer). the submission for the above approach can be found here: https://leetcode.com/problems/rotate-image/submissions/1589360459/—Runtime: 0 ms (beats 100.00%), Memory: 17.76 MB (beats 100.00%)
+
+# However, the above approach felt a bit confusing. Meanwhile, I realized that rotating 90 degrees clockwise is equivalent to:
 
 # 1. Transposing the matrix
 # 2. Flipping the matrix horizontally
 
-# I assumed that this approach is much easier to implement (and also straightforward), so I decided to go with this approach.
+# I assumed that this approach is easier to implement and straightforward, so I decided to go with this one.
 
 
 class Solution:
