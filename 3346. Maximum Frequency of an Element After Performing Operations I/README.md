@@ -196,9 +196,22 @@ class Solution:
 ```
 <br>
 
-cf.) One important concept I learnt: behavior difference between `bisect_left` and `bisect_right` 
+cf.) One important concept I learnt: behavior difference between `bisect_left` and `bisect_right`.
+
+- `bisect_left`: insert on the left of existing equal values.
+- `bisect_right`: insert on the right of existing equal values.
+
 
 | Scenario             | `bisect_left` Result              | `bisect_right` Result               |
 | :------------------- | :-------------------------------- | :---------------------------------- |
 | Value not in list    | Same index (where it would go)    | Same index (where it would go)      |
 | Value exists in list | Index of the **first** occurrence | Index **after** the last occurrence |
+
+
+Sometimes, even the above table is hard to remember. A simple memory trick is to remember the **condition** in the table below:
+
+| Function             | Finds first position where x can go | Condition   |
+| :------------------- | :---------------------------------- | :---------- |
+| `bisect_left(a, x)`  | Before any equal `x`                | `a[i] >= x` |
+| `bisect_right(a, x)` | After all equal `x`                 | `a[i] > x`  |
+
