@@ -1,8 +1,10 @@
-# submission: https://leetcode.com/problems/powx-n/submissions/1704082693/
-# runtime: 0 ms, memory: 17.7 MB
-
+# submission: https://leetcode.com/problems/powx-n/submissions/1704096280/
+# runtime: 1 ms (beats 32.17%), memory: 17.65 MB (beats 100.00%)
 # 27 min
-# TC: O(log |n|), where n is the exponent 'n' in the functim myPow(...).
+# solved using divide-and-conquer / binary exponentiation (iterative approach)
+
+
+# TC: O((log |n|)^2), where n is the exponent 'n' in the functim myPow(...).
 # SC: O(1)
 
 
@@ -13,6 +15,9 @@
 # then, while attempting with the brute force (linear time) approach, i found out that i could approximately compute the answer by doubling the 'x' value for 'k' times until k meets the condition 2 ** k <= n <= 2 ** (k + 1). with this chain of thought, i realized that the 'n' can be represented as 2 ** a + 2 ** b + ... + 2 ** z, which is simply the binary representation of 'n', where a, b, ..., z are the indices of the bits that are set to 1 in 32 bit integer.
 
 # therefore, i can utilize binary representation of 'n' to compute the answer in logarithmic time.
+
+
+# cf.) the standard (or better) iterative binary exponentation solution performs in O(log |n|) time. this solution takes O((log |n|)^2) time since it recomputes the squaring results instead of reusing them. standard iterative solution can be found in the README.md.
 
 # cf.) below is the iterative solution using python's built-in bin() function. "07_19_2025_recursive.py" contains the recursive solution.
 
@@ -29,8 +34,6 @@ class Solution:
                 for _ in range(i):
                     factor *= factor
 
-                ans  *= factor
+                ans *= factor
 
         return ans if n > 0 else 1 / ans
-
-# notes on the paper
