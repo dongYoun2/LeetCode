@@ -1,13 +1,16 @@
-# problem: https://leetcode.com/problems/search-a-2d-matrix/
-# submission: https://leetcode.com/problems/search-a-2d-matrix/submissions/
-
+# submission: https://leetcode.com/problems/search-a-2d-matrix/submissions/1589470026/
+# runtime: 0 ms (beats 100.00%), memory: 18.16 MB (beats 100.00%)
 # 15 min
+# solved using binary search
+
 # TC: O(log(m*n)) (required in the problem)
 # SC: O(1)
+
 
 # The input matrix is sorted in non-descending order, so we can use binary search to find whether the target exists in the matrix. (Since I am solving the problem based on the algorithm type, I knew that I had to use binary search.) We cannot use python bisect module since it rquires a 1d array as the argument.
 
 # In the beginning, I came up with an approach to perform a binary search on the first column to find the correct row that "can" contain the target value, then perform a binary search again on that row. Since the time complexity for this is O(log m + log n), I thought of another algorithm that runs a binary search on the entire matrix as a 1d array, which the code below implements. However, by the time writing this comment, I realized that O(log m + log n) is the same as O(log (m*n)), so I could have used the first approach as well, LOL.
+
 
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
