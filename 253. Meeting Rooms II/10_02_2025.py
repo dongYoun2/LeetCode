@@ -1,7 +1,8 @@
 # submission: https://leetcode.com/problems/meeting-rooms-ii/submissions/1789227664/
-# runtime: 3 ms, memory: 19.78 MB
-
+# runtime: 3 ms (beats 84.20%), memory: 19.78 MB (beats 100.00%)
 # 51 min
+# sorting + priority queue (min heap) (but this usage of a priority queue is not optimal)
+
 # TC: O(n log n + 2 * n log n) -> O(n log n), where n is the length of the `intervals`.
 # - sorting takes O(n log n) time.
 # - in the worst case, maximum number of heappop operations we can do for the loop is n. moreover, for each interval, we are doing heappush operation. so, total heappop/heappush related time complexity is (2 * n log n) -> O(n log n).
@@ -32,4 +33,5 @@ class Solution:
             heapq.heappush(pq, (intervals[i][1], intervals[i]))
             ans = max(ans, len(pq))
 
+        # `return len(pq)` also works
         return ans

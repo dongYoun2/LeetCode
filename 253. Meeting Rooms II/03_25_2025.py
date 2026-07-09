@@ -1,9 +1,11 @@
 # submission: https://leetcode.com/problems/meeting-rooms-ii/submissions/1789388445/
-# runtime: 3 ms, memory: 19.8 MB
-
+# runtime: 3 ms (beats 84.20%), memory: 19.82 MB (beats 100.00%)
 # 16 min
+# sorting + brute force (linear) search for available room
+
 # TC: O(nlog n + n^2) -> O(n^2), where n is the number of intervals
 # SC: O(n)
+
 
 # This is a greedy algorithm, making the local optimal choice.
 # 1. Always trying to assign an existing meeting room.
