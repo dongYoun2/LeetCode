@@ -1,10 +1,13 @@
 # submission: https://leetcode.com/problems/set-matrix-zeroes/submissions/1774464503/
-# runtime: 0 ms, memory: 18.3 MB
+# runtime: 0 ms (beats 100.00%), memory: 18.32 MB (beats 100.00%)
+# solved using m+n space (two sets for marking rows and columns to be zeroed)
 
 # 11 min
 # TC: O(m*n)
 # SC: O(m+n)
 
+
+# once looking at the follow-up question, realized that m*n space solution is not optimal. so, with the hint that there's also a m+n space solution in the follow-up statement, i came up with the below solution. however, this is still not optimal. the optimal solution is the O(1) space approach, which can be found in the README.md.
 
 # this approach solves the problem in three passes:
 # 1. First pass: remember which rows/cols must be zero using two sets.

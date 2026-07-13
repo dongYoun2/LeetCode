@@ -1,5 +1,5 @@
-# problem: https://leetcode.com/problems/set-matrix-zeroes/
 # submission: https://leetcode.com/problems/set-matrix-zeroes/submissions/1595697769/
+# runtime: 3 ms (beats 91.22%), memory: 18.40 MB (beats 100.00%)
 # actually, this code should be regarded as wrong since it breakes the fact that the matrix is of type int given in the problem statement!
 
 # 7 min

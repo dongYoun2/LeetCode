@@ -35,7 +35,7 @@ class Solution:
 <br>
 
 
-## Solution for the Follow-up Question 2: O(1) Space, Efficient Solution
+## Solution for the Follow-up Question: O(1) Space, Efficient Solution
 
 The logic is as follows:
 1. First pass: remember which rows/cols must be zero using the first row/col as marker storage.

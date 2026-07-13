@@ -1,5 +1,6 @@
 # submission: https://leetcode.com/problems/set-matrix-zeroes/submissions/1774458836/
-# runtime: 7 ms, memory: 18.3 MB
+# runtime: 15 ms (beats 20.30%), memory: 18.82 MB (beats 100.00%)
+# solved with m*n space (copying the matrix)
 
 # 8 min
 # TC: O(m*n)
@@ -10,6 +11,7 @@
 
 
 from copy import deepcopy
+
 
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
