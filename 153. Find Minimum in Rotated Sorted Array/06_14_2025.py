@@ -1,6 +1,8 @@
 # submission: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/1663497434/
-
+# runtime: 0 ms (beats 100.00%), memory: 17.99 MB (beats 100.00%)
 # 12 min
+# solved with binary search
+
 # TC: O(log n), where n is the number of elements in the array.
 # SC: O(1)
 
