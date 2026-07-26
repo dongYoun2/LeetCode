@@ -1,11 +1,11 @@
 # submission: https://leetcode.com/problems/insert-delete-getrandom-o1/submissions/1756403824/
-
 # 55 min
+# this is a wrong implementation
 
 
 # From LeetCode Top Interview 150 - Array / String
 
-# the code below is a wrong implementation (it's almost close). the only thing to change is adding a `latest_val` and `val` equality checks in the `remove(...)` method. without them, the same value will be reinserted after removing it. the correct implementation can be found at https://leetcode.com/problems/insert-delete-getrandom-o1/submissions/1756412294/.
+# the code below is a wrong implementation (it's almost close). the only thing to change is adding a `latest_val` and `val` equality checks in the `remove(...)` method. without them, the same value will be reinserted after removing it. the correct implementation can be found at https://leetcode.com/problems/insert-delete-getrandom-o1/submissions/1756412294/—runtime: 165 ms (beats 20.89%), memory: 57.40 MB (beats 9.97%).
 
 # moreover, instead of keeping both index to val and val to index mappings, we can simply keep a list of values and a val to index mapping, which is the same approach explained in the Editorial section. in this way, we don't need to check the equality of the latest value and the value being removed.
 
