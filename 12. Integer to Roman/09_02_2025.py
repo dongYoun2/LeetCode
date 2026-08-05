@@ -1,16 +1,17 @@
 # submission: https://leetcode.com/problems/integer-to-roman/submissions/1757165742/
-# runtime: 7 ms, memory: 17.8 MB
-
+# runtime: 7 ms (beats 38.04%), memory: 17.8 MB (beats 100.00%)
 # 28 min
+# solved with greedy by decimal place
+
 # TC: O(1), since the number of digits is limited to 4 (input size is fixed)
 # SC: O(1)
 
 
 # this is the second time solving this problem. first time was on 03/17/2025, which took around 45 min to solve (https://leetcode.com/problems/integer-to-roman/submissions/1577232564/).
 
-# the code below is legit, but there's simpler and more readable solution. instead of iterating through the divisor (1000 -> 100 -> 10 -> 1), which is driven by the place value (digits) of the input number, we can iterate through the predefined sorted list of (value, roman symbol) pairs (in my case, the sorted `mapping` dictionary). this insight is driven by the symbols rather than the number's digit structure.
+# the code below is valid, but there's simpler and more readable solution. instead of iterating through the divisor (1000 -> 100 -> 10 -> 1), which is driven by the place value (digits) of the input number, we can iterate through the predefined sorted list of (value, roman symbol) pairs (in my case, the sorted `mapping` dictionary). this insight is driven by the symbols rather than the number's digit structure.
 
-# KEY TAKEAWAY: iterating through a predefined sorted list of (value, symbol) pairs (including subtractive cases) is cleaner as it makes the rules explicit and the loop logic uniform. (for more details refer to the Editorial's Approach 1.)
+# KEY TAKEAWAY: iterating through a predefined sorted list of (value, symbol) pairs (including subtractive cases) is cleaner as it makes the rules explicit and the loop logic uniform. (for more details refer to the README.md's "Greedy Approach" or Editorial's Approach 1; both has exactly the same logic.)
 
 
 class Solution:
