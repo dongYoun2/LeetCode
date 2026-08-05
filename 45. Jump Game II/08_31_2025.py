@@ -1,10 +1,9 @@
 # submission: https://leetcode.com/problems/jump-game-ii/submissions/1754967139/
-# runtime: 307 ms, memory: 18.6 MB
-
+# runtime: 307 ms (beats 19.56%), memory: 18.6 MB (beats 100.00%)
 # 14 min
-# TC: O(n^2), where n is the length of nums
-# SC: O(n), dp array
+# solved using dp backward
 
+# refer to the README.md's "Iterating Backward" section for the complexirty analysis
 
 # From LeetCode Top Interview 150 - Array / String
 

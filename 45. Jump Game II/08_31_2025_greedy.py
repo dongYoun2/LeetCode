@@ -1,7 +1,8 @@
 # submission: https://leetcode.com/problems/jump-game-ii/submissions/1754975826/
-# runtime: 4 ms, memory: 18.71 MB
-
+# runtime: 4 ms (beats 70.21%), memory: 18.71 MB (beats 100.00%)
 # 6 min
+# sovled using greedy algorithm
+
 # TC: O(n), where n is the length of nums
 # SC: O(1)
 

@@ -1,7 +1,8 @@
 # submission: https://leetcode.com/problems/jump-game-ii/submissions/1735954249/
-# runtime: 964 ms, memory: 19.37 MB
-
+# runtime: 964 ms (16.91%), memory: 19.37 MB (beats 99.99%)
 # 26 min
+# solved using BFS (level-order traversal)
+
 # TC: O(V+E), where V (# of verticies) is equal to n, the length of nums, and E (# of edges) is <= n^2 in the worst case.
 # SC: O(n), for the queue and `visited` set
 

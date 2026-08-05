@@ -8,8 +8,9 @@ This problem is similar to [55. Jump Game](../55.%20Jump%20Game/greedy_approach.
 Greedy appraoch is the most efficient way to solve this problem. Both time and space complexity is better than the DP approach. The idea is to keep track of the maximum reachable index at each step and the number of jumps made so far. When the current index reaches the end of the current jump range (`end`), we update the `end`and increment the jump count (`jump_cnt`).
 
 
-- [Submission](https://leetcode.com/problems/jump-game-ii/submissions/1215353378/)
-- Runtime: 103 ms, Memory: 17.54 MB
+[Submission](https://leetcode.com/problems/jump-game-ii/submissions/2094669723/)—Runtime: 4 ms (beats 70.21%), Memory: 19.97 MB (beats 92.78%)
+
+
 - TC: $O(n)$, where $n$ is the length of `nums`.
 - SC: $O(1)$
 
@@ -39,15 +40,14 @@ class Solution:
 ### Iterating Backward
 
 Although the time complexity of DP forward and backward is the same, iterating backward is more intuitive as well as faster in practice (see the runtime difference below). This is because:
-1. Backward DP allows us to directly compute the minimum jumps needed for each index. In words, we do one write to `dp[i]`, whereas in forward DP, we may write to `dp[j]` multiple times.
+1. Each `dp[i]` is computed exactly once, whereas forward DP may update the same `dp[j]` multiple times from different indices.
 2. Backward DP can take advantage of C-optimized techniques like slicing in `min()` operation.
-
 
 The code here is the optimized version of the `08_15_2025.py` solution. It reflects the improvements discussed in the comments of that file.
 
-- [Submission](https://leetcode.com/problems/jump-game-ii/submissions/1736017736/)
-- Runtime: 329 ms, Memory: 18.3 MB
-- TC: $O(n^2)$
+[Submission](https://leetcode.com/problems/jump-game-ii/submissions/1736017736/)—Runtime: 329 ms (beats 19.23%), Memory: 18.34 MB (beats 100.00%)
+
+- TC: $O(n  \cdot k)$, where $n$ is the length of `nums` and $k$ is the largest possible value of `nums[i]` (i.e., the maximum jump length), which is at most 1000.
 - SC: $O(n)$
 
 <br>
@@ -68,12 +68,12 @@ class Solution:
 ```
 
 
-## Iterating Forward
+### Iterating Forward
 
-- [Submission](https://leetcode.com/problems/jump-game-ii/submissions/1735975784/)
-- Runtime: 3179 ms, Memory: 18.42 MB
-- TC: $O(n^2)$
-- SC: $O(n)$
+[Submission](https://leetcode.com/problems/jump-game-ii/submissions/1735975784/)—Runtime: 3179 ms (beats 7.49%), Memory: 18.42 MB (beats 100.00%)
+
+
+Complexity analysis is the same as the backward iteration, but this approach is slower in practice due to the reasons mentioned above.
 
 <br>
 
@@ -96,4 +96,4 @@ class Solution:
 
 ## BFS (with `visited` set)
 
-Refer to the `08_15_2025_bfs.py` solution.
+Refer to the [08_15_2025_bfs.py](./08_15_2025_bfs.py) solution.
