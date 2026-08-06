@@ -1,3 +1,11 @@
+# submission: https://leetcode.com/problems/find-k-pairs-with-smallest-sums/submissions/1590457845/
+# time limit exceeded (logically correct solution though)
+# used heap, but considered all possible pairs
+
+
+# below implementation is logically correct, but it is too slow since it checks every possible pairs.
+
+
 import heapq
 
 class Solution:

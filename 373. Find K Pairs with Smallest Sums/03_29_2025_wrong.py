@@ -1,3 +1,7 @@
+# no submission
+# wrong solution even on the sample test cases
+
+
 # Although I knew that I had to use heap, I was not sure how to implement it.
 
 # I first thought of the brute force approach, where I would generate all possible pairs and then sort them (with heap sort or any other sorting algorithm) and return the first k pairs. However, this would be inefficient as the time complexity would be O(n*m*log(n*m)), where n and m are the lengths of the two lists.
@@ -6,7 +10,8 @@
 
 # Let's say we chose (nums1[0], nums2[1]) as the pair with the second smallest sum. Then, would the next pair be either only between (nums1[0], nums2[2]) or (nums1[1], nums2[1])? No, we also have to consider the leftover from the previous iteration, which would be (nums1[1], nums2[0]). So, we need to keep track of the pairs that we have already considered. This is where the heap comes in. We can use a min-heap to store the sum and the index pair, and pop the smallest sum from the heap for k times. The time complexity of this approach becomes O(k log k), where k <= n*m.
 
-# For more details, refer the markdown file and the LeetCode Editorial.
+# For more details, refer the README.md and or the LeetCode Editorial.
+
 
 import heapq
 

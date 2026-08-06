@@ -1,7 +1,8 @@
 # submission: https://leetcode.com/problems/find-k-pairs-with-smallest-sums/submissions/1772032258/
-# runtime: 121 ms, memory: 34.9 MB
-
+# runtime: 121 ms (beats 21.65%), memory: 34.9 MB (beats 34.89%)
 # 65 min (including the time spent on `09_15_2025_mle.py`)
+# solved using heap
+
 # TC: O(k * log k)
 # SC: O(k)
 

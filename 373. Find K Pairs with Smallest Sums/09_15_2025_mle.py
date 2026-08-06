@@ -1,8 +1,9 @@
 # submission: https://leetcode.com/problems/find-k-pairs-with-smallest-sums/submissions/1771997307/
-# Memory Limit Exceeded
-
+# Memory Limit Exceeded (logically correct solution though)
 # 45 min
-# TC: O((n1*n2) * log (n1*n2))
+# used heap, but considered all possible pairs
+
+# TC: O((n1*n2) * log (n1*n2)), where n1 = len(nums1), n2 = len(nums2)
 # SC: O(n1*n2)
 
 

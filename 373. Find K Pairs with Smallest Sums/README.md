@@ -1,11 +1,18 @@
+[Problem](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/)
+
+
 ## Heap Solution
 
-- [Problem](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/)
-- Time complexity: $O(k log(k))$ (looping over k pairs, two heap push operations for each iteration)
-- Space complexity: $O(k)$ (heap size of k)
+
+[Submission](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/submissions/2097269205/)—Runtime: 113 ms (beats 24.44%), Memory: 39.78 MB (beats 47.83%)
+
+
+- TC: $O(k log(k))$ (looping over k pairs, two heap push operations for each iteration)
+- SC: $O(k)$ (heap size of k)
 
 ```python
 import heapq
+
 
 class Solution:
     def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
