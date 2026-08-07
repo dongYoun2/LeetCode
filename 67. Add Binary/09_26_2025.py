@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/add-binary/submissions/1783719099/
-# runtime: 2 ms, memory: 18.02 MB
-
+# runtime: 2 ms (beats 48.65%), memory: 18.02 MB (beats 100.00%)
 # 17 min
+
 
 # again, i solved it with the similar logic as i did in the `06_17_2025.py` code. i hope i can solve it either bit-by-bit computation (AC implementation) or bit manipulation next time.
 

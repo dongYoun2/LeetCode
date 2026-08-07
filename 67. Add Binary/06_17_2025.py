@@ -1,7 +1,7 @@
 # submission: https://leetcode.com/problems/add-binary/submissions/1667781248/
-# runtime: 3 ms, memory: 17.7 MB
-
+# runtime: 3 ms (beats 41.28%), memory: 17.7 MB (beats 100.00%)
 # 11 min
+
 # TC: O(max(m, n)), where m is the length of `a` and n is the length of `b`.
 # SC: O(max(m, n)), for keeping `answer` array.
 

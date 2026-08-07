@@ -8,7 +8,8 @@ The main idea is to use bitwise operations to compute `sum_without_carry` and `c
 
 
 
-- [Submission](https://leetcode.com/problems/add-binary/submissions/1783732582/) (Runtime: 0 ms, Memory: 17.70 MB)
+[Submission](https://leetcode.com/problems/add-binary/submissions/1783732582/)—Runtime: 0 ms (beats 100.00%), Memory: 17.70 MB (beats 100.00%)
+
 - TC: $O(m + n)$, where $m$ and $n$ are the lengths of the two binary strings.
 - SC: $O(max(m, n))$
 
@@ -34,7 +35,9 @@ The solution below applies the two improvements mentioned in the `06_17_2025.py`
 
 cf.) The logic is identical to the Editorial's Approach 1.
 
-- [Submission](https://leetcode.com/problems/add-binary/submissions/1783724822/) (Runtime: 3 ms, Memory: 17.8 MB)
+[Submission](https://leetcode.com/problems/add-binary/submissions/1783724822/)—Runtime: 3 ms (beats 41.28%), Memory: 17.85 MB (beats 100.00%)
+
+
 - TC: $O(max(m, n))$, where $m$ and $n$ are the lengths of the two binary strings.
 - SC: $O(max(m, n))$ (for `ans` array)
 
@@ -65,4 +68,4 @@ class Solution:
 
 cf.) Here, we can also use `%` and `//` operators instead of `divmod` function to find the digit and carry.
 
-- [Submission using `%` and `//` operators](https://leetcode.com/problems/add-binary/submissions/1783725000/) (Runtime: 3 ms, Memory: 18.11 MB)
+- [Submission using `%` and `//` operators](https://leetcode.com/problems/add-binary/submissions/1783725000/)—Runtime: 3 ms (beats 41.28%), Memory: 18.11 MB (beats 100.00%)
