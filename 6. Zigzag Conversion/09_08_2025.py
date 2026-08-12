@@ -1,12 +1,13 @@
 # submission: https://leetcode.com/problems/zigzag-conversion/submissions/1764128439/
-# runtime: 320 ms, memory: 24.6 MB
-
+# runtime: 320 ms (beats 5.01%), memory: 24.6 MB (beats 5.45%)
 # 32 min
+# solved with a simulation approach (not optimal)
+
 # TC: O(n * numRows), where n is the length of the input string
 # SC: O(n * numRows) for the 2D matrix
 
 
-# at first, i tried to solving the mathematical pattern, which i rememeber that i solved in this way on the very first attempt of this problem (03_20_2025.py). however, it took longer than i expected, so i switched to tryi simulating the zigzag, which i haven't tried solving in this way before.
+# at first, i tried to solving the mathematical pattern, which i rememeber that i solved in this way on the very first attempt of this problem (03_20_2025.py). however, it took longer than i expected, so i switched to simulating the zigzag, which i haven't tried solving this way before.
 
 # i defined the 2D matrix of size (numRows * len(s)) initiallized with empty strings (but it turns out that for optimal solution for the simulation approach, i didn't need to fill in with empty strings, as shown in the README file). then, i filled in the characters in the zigzag pattern by moving down and up-right in a loop until all characters are placed.
 

@@ -1,10 +1,12 @@
-# https://leetcode.com/problems/zigzag-conversion/description/
+# submission: https://leetcode.com/problems/zigzag-conversion/submissions/1580459118/
+# runtime: 10 ms (beats 56.10%), memory: 17.77 MB (beats 100.00%)
+# 40 min
+# solved using the mathematical pattern approach (index computation)
 
-# took 40 min
-# n: input string length
 # TC: O(n)
 # SC: O(1) (output space not considered)
-# Although a nested loop is used, the time complexity is O(n).
+# cf.) Although a nested loop is used, the time complexity is O(n).
+
 
 # Felt like a simulation problem (but the approach below is actually arithmetic approach based on the index-based calculation). I think finding the pattern is the core of this problem.
 
@@ -35,8 +37,7 @@ class Solution:
         return output
 
 
-# Notes while solving the problem
-
+# Notes while solving:
 # numRows = 5
 # P0        H8
 # A1     S7 I9

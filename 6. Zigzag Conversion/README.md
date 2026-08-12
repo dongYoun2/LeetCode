@@ -4,9 +4,11 @@
 
 This approach simulates the zigzag pattern by building each row one at a time. Below code is the improved version of the `09_08_2025.py` solution.
 
-- [Submission](https://leetcode.com/problems/zigzag-conversion/submissions/1764196760/) (Runtime: 9 ms, Memory: 18.2 MB)
+[Submission](https://leetcode.com/problems/zigzag-conversion/submissions/1764196760/)—Runtime: 9 ms (beats 60.31%), Memory: 18.16 MB (beats 100.00%)
+
 - TC: $O(n \cdot numRows)$, where $n$ is the length of the input string `s`.
 - SC: $O(n)$, `rows`, the space used to store the result. although it's a nested list, the total number of characters stored is still `n`.
+
 
 ```python
 class Solution:
@@ -31,12 +33,16 @@ class Solution:
 
 ```
 
+cf.) This solution's logic is the same as the [Editorial's Approach 1: Simulate Zig-Zag Movement](https://leetcode.com/problems/zigzag-conversion/editorial/#approach-1-simulate-zig-zag-movement).
+
+
 
 ## Mathematical Approach (computing indices)
 
 This approach computes the indices of characters in each row based on the periodicity of the zigzag pattern.
 
-- [Submission](https://leetcode.com/problems/zigzag-conversion/submissions/1764194636/) (Runtime: 7 ms, Memory: 17.8 MB)
+[Submission](https://leetcode.com/problems/zigzag-conversion/submissions/1764194636/)—Runtime: 7 ms (beats 83.75%), Memory: 17.76 MB (beats 100.00%)
+
 - TC: $O(n)$
 - SC: $O(n)$
 
@@ -99,3 +105,7 @@ class Solution:
         return ''.join(ans)
 
 ```
+
+
+
+cf.) This solution's logic is the same as the [Editorial's Approach 2: String Traversal](https://leetcode.com/problems/zigzag-conversion/editorial/#approach-2-string-traversal).
