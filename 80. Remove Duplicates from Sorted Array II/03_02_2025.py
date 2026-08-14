@@ -1,5 +1,7 @@
 # Submission: https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/submissions/1560993842/
-# Runtime: 82 ms, Memory: 20.4 MB
+# Runtime: 82 ms (beats 81.14%), Memory: 20.4 MB (Beats 100.00%)
+# array manipulation with three pointers, which are `curr`, `prev`, and `prev_prev` (indeed, only two pointers are sufficient)
+
 
 # TC: O(n), where n is the length of the input array
 # SC: O(1)
@@ -9,7 +11,7 @@
 
 # Approach below uses three pointers; current position (`i` in the loop), previous position (`prev`), and the previous to previous position (`prev_prev`). `pos` indicates the position to add the next unique element. The algorithm ensures that each element appears at most twice in the modified array.
 
-# For more optimized approach, refer to the markdown file.
+# cf.) For a better implementation, refer to a README file.
 
 
 class Solution:

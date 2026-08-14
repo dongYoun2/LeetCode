@@ -1,7 +1,8 @@
 # submission: https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/submissions/1726189336/
-# runtime: 85 ms, memory: 20.4 MB
-
+# runtime: 85 ms (beats 68.35%), memory: 20.4 MB (beats 100.00%)
 # 13 min
+# solved with array manipulation, using two pointers (`add_pos` and `i`) and a counting variable (`freq`)
+
 # TC: O(n), where n is the length of the input array
 # SC: O(1), since we are modifying the input array in place
 
