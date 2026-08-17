@@ -1,9 +1,10 @@
 # submission: https://leetcode.com/problems/insert-interval/submissions/1829813921/
-# runtime: 3 ms, memory: 19.89 MB
-
+# runtime: 3 ms (beats 29.88%), memory: 19.89 MB (beats 100.00%)
 # 8 min
+# Find overlap boundaries with linear search, then merge
+
 # TC: O(n), where n is the number of intervals
-# SC: O(n) `front`, `middle`, `rear` arrays are used to store the intervals.(output list is newly created, and this doesn't count)
+# SC: O(n) `front`, `middle`, `rear` arrays are used to store the intervals. (output space not counted)
 
 
 # this is pretty simple and straightforward solution. note that the input intervals are already sorted by the start time.

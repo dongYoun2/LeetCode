@@ -1,13 +1,15 @@
 # submission: https://leetcode.com/problems/insert-interval/submissions/1775535414/
-# runtime: 0 ms, memory: 19.9 MB
-
+# runtime: 0 ms (beats 100.00%), memory: 19.89 MB (beats 100.00%)
 # 39 min
+# Find overlap boundaries with linear search, then merge
+
 # TC: O(n)
 # SC: O(1)
 
-# at first, i knew i could solve this problem after sorting, but that would require O(n log n) time complexity.
 
-# so, i tried to solve it in O(n) time. after failing on several cases (keep submitting and fixing with some trial and error), i finally could solve it with the code below. especially, i found it's easier to think with even defining the `mid_intervals` where the start of the new interval is equal to the start of the intervals in the input.
+# at first, i knew i could solve this problem after sorting, but that would require O(n log n) time complexity (just like "04_09_2025.py"); but note that the intervals are already sorted by the start time, lol.
+
+# so, i tried to solve it in O(n) time. after failing on several cases (submitting and fixing on and on; trial and error), i finally could solve it with the code below. especially, i found it's easier to think even with defining the `mid_intervals` where the start of the new interval is equal to the start of the intervals in the input.
 
 # however, the code is not very readable and it could be improved further. for more details, refer to the markdown file.
 

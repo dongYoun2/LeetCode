@@ -1,14 +1,16 @@
-# problem: https://leetcode.com/problems/insert-interval/
 # submission: https://leetcode.com/problems/insert-interval/submissions/1601839693/
+# runtime: 0 ms (beats 100.00%), memory: 19.63 MB (beats 100.00%)
+# binary search + merging 
 
 # TC: O(log n + 2*n) -> O(n) (binary search + inserting newInterval + merge)
 # SC: O(1) (output list is not counted)
 
-# cf.) If I use `intervals = intervals[:i] + [newInterval] + intervals[i:]`instead of `intervals.insert(i, newInterval)`, the space complexity will be O(n) because it creates a new list and copies the elements. Moreover, `insert()` preserves the memory address, whereas the slicing creates a new list with a different memory address.
 
 # From LeetCode Top Interview 150 - Intervals
 
 # After solving with Python sorting ("04_09_2025.py"), I found out that  I can also use the binary search to find the position to insert `newInterval`, preserving the sorted order of `intervals`.
+
+# cf.) If I use `intervals = intervals[:i] + [newInterval] + intervals[i:]`instead of `intervals.insert(i, newInterval)`, the space complexity will be O(n) because it creates a new list and copies the elements. Moreover, `insert()` preserves the memory address, whereas the slicing creates a new list with a different memory address.
 
 
 from bisect import bisect_left
