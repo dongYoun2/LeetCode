@@ -1,8 +1,8 @@
 # submission: https://leetcode.com/problems/majority-element/submissions/1731851650/
-# runtime: 4 ms, memory: 19.4 MB
-
-
+# runtime: 4 ms (beats 70.83%), memory: 19.38 MB (beats 100.00%)
 # 7 min
+# Boyer-Moore Voting Algorithm (it solves the follow-up question)
+
 # TC: O(n)
 # SC: O(1)
 

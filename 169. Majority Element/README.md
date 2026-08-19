@@ -1,32 +1,21 @@
 [Problem](https://leetcode.com/problems/majority-element/)
 
+
+
 ## Sorting Solution
 
-- [Submission](https://leetcode.com/problems/majority-element/submissions/1731845853/)
-- Runtime: 4 ms, Memory: 19.43 MB
-- TC: $O(n \log n)$, due to sorting.
-- SC: $O(1)$.
 
-<br>
-
-```python
-class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
-        return sorted(nums)[len(nums) // 2]
-
-```
+Refer to the file [08_11_2025.py](08_11_2025.py).
 
 
 ## Hash Map Solutions
 
 ### Using `defaultdict`
 
-- [Submission](https://leetcode.com/problems/majority-element/submissions/1566366951/)
-- Runtime: 14 ms, Memory: 19.24 MB
+[Submission](https://leetcode.com/problems/majority-element/submissions/1566366951/)—Runtime: 14 ms (beats 20.87%), Memory: 19.24 MB (beats 100.00%)
+
 - TC: $O(n)$
 - SC: $O(n)$
-
-<br>
 
 ```python
 from collections import defaultdict
@@ -45,12 +34,14 @@ class Solution:
 
 ### Using `Counter`
 
-- [Submission](https://leetcode.com/problems/majority-element/submissions/1566158226/)
-- Runtime: 0 ms, Memory: 19.68 MB
+We  can simply use the `Counter`'s `most_common` method.
+
+
+[Submission](https://leetcode.com/problems/majority-element/submissions/1566158226/)—Runtime: 0 ms (beats 100.00%), Memory: 19.68 MB (beats 100.00%)
+
+
 - TC: $O(n)$
 - SC: $O(n)$
-
-<br>
 
 ```python
 from collections import Counter
@@ -65,12 +56,16 @@ class Solution:
 
 ## Boyer-Moore Voting Algorithm
 
-- [Submission](https://leetcode.com/problems/majority-element/submissions/1566370748/)
-- Runtime: 3 ms, Memory: 19.10 MB
+This approach solves the **follow-up question**.
+
+cf.) [08_11_2025_boyer_moore.py](08_11_2025_boyer_moore.py) and [08_18_2026_follow_up.py](08_18_2026_follow_up.py) also implement this algorithm.
+
+
+[Submission](https://leetcode.com/problems/majority-element/submissions/1566370748/)—Runtime: 3 ms (beats 84.89%), Memory: 19.10 MB (beats 100.00%)
+
 - TC: $O(n)$
 - SC: $O(1)$
 
-<br>
 
 ```python
 class Solution:

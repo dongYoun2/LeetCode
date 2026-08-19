@@ -1,7 +1,8 @@
 # submission: https://leetcode.com/problems/majority-element/submissions/1731845853/
-# runtime: 4 ms, memory: 19.43 MB
-
+# runtime: 4 ms (beats 70.83%), memory: 19.43 MB (beats 100.00%)
 # 1 min
+# sorting approach
+
 # TC: O(n log n) due to sorting
 # SC: O(1)
 
@@ -10,7 +11,7 @@
 
 # I have solved this problem several times before. This problem can also be solved using (default) dictionary or Boyer-Moore Voting Algorithm, but sorting came to my mind first, and indeed, it's the simplest solution.
 
-# cf.) For other approaches, refer to the markdown file.
+# cf.) For other approaches, refer to the README.
 
 
 class Solution:
