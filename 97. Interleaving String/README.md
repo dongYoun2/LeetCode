@@ -1,140 +1,137 @@
-- [TLE Code](#tle-code)
-- [Correct Code](#correct-code)
-- [Editorial's Approach 2: Recursion with memoization Code](#editorials-approach-2-recursion-with-memoization-code)
-
-<br>
-
 [Problem](https://leetcode.com/problems/interleaving-string/)
-<br>
 
 
-### TLE Code
+## Dynamic Programming
 
-- [Submission](https://leetcode.com/problems/interleaving-string/submissions/1593580461/)
-- Problems: 1) incomplete key, 2) one-sided caching
 
-I first submitted the below code while solving the problem, but I got the **Time Limit Exceeded**. Since the code passed the provided test cases, I assumed that the implementation for memoization was wrong. I tried to debug for a bit, but couldn't figure out the reason. So, I just used a cache decorator from the Python Standard Library, and I could solve this question (`04_01_2025.py`).
+## Top-Down (with DFS) + Memoization
 
-There are two problems with the below code. One is that the **key for the caching dictionary is incomplete**. Here, only the `target` string is used for the key. This does not uniquely represent the current state of the recursion. Therefore, different recursion paths that lead to the same `target` get conflated.
+Start from `(i, j)` and recursively try taking the next character from either `s1` or `s2`. Cache each `(i, j)` result so the same state is never solved twice.
 
-**One-sided caching** is another issue. In the below code, we only cache when the result (or the output) of the `interleaving()` is `True`. In other words, the subproblem returning `False` is not added to the memoization storage. As a result, many failing subproblems (that are not valid interleaving strings for specific states) get recomputed over and over again. (This is the reason for the TLE)
+
+cf.) [04_01_2025.py](./04_01_2025.py) also follows this approach.
+
+
+[Submission](https://leetcode.com/problems/interleaving-string/submissions/2116882746/)—Runtime: 47 ms (beats 79.54%), Memory: 20.05 MB (beats 29.75%)
+
+- TC: $O(m*n)$, where $m$ and $n$ are the lengths of $s1$ and $s2$, respectively.
+- SC: $O(n)$
+
 
 ```python
 class Solution:
     def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
-        if len(s1) + len(s2) != len(s3):
-            return False
+        m, n = len(s1), len(s2)
 
-        memo = set()
-        def interleaving(s, t, target):
-            assert len(s) + len(t) == len(target)
-
-            if target == "":
-                return True
-
-            if target in memo:
-                return True
-
-            for i in range(1, len(s) + 1):
-                if s[:i] == target[:i]:
-                    if interleaving(s[i:], t, target[i:]):
-                        memo.add(target[i:])
-                        return True
-
-            for i in range(1, len(t) + 1):
-                if t[:i] == target[:i]:
-                    if interleaving(s, t[i:], target[i:]):
-                        memo.add(target[i:])
-                        return True
-
-
-        return interleaving(s1, s2, s3)
-
-```
-<br>
-
-### Correct Code
-
-- [Submission](https://leetcode.com/problems/interleaving-string/submissions/1593603270/)
-- Solved previous two issues
-- $n$ is the length of `s1`, and $m$ is the length of `s2`
-- TC: $O(n \cdot m \cdot (n + m))$ (number of states, and string operation (i.e. python slicing) for each state)
-- SC: $O(n \cdot m \cdot (n + m) + (n + m))$ -> $O(n \cdot m \cdot (n + m))$ (Adding $n + m$ is for the maximum recursion stack)
-
-One thing to notice is that we don't have to use all parameters, that is, `s`, `t`, and `target`, as a key for the `memo` dictionary. This is because we assume (and maybe enforce) this function to be called only when `len(s) + len(t) == len(target)` as seen in the `assert` statement. Due to this invariant in the recursion, adding `target` in the key is redundant. (This means we can also use `(s, target)` or `(t, target)` as the key.)
-
-```python
-class Solution:
-    def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
-        if len(s1) + len(s2) != len(s3):
+        if m + n != len(s3):
             return False
 
         memo = {}
-        def interleaving(s, t, target):
-            assert len(s) + len(t) == len(target)
 
-            if target == "":
+        def dfs(i, j):
+            if i == m and j == n:
                 return True
 
-            key = (s, t)
-            if key in memo:
-                return memo[key]
+            if (i, j) in memo:
+                return memo[(i, j)]
 
-            for i in range(1, len(s) + 1):
-                if s[:i] == target[:i]:
-                    if interleaving(s[i:], t, target[i:]):
-                        memo[(s[i:], t)] = True
-                        return True
+            k = i + j
 
-            for i in range(1, len(t) + 1):
-                if t[:i] == target[:i]:
-                    if interleaving(s, t[i:], target[i:]):
-                        memo[(s, t[i:])] = True
-                        return True
+            if i < m and s1[i] == s3[k] and dfs(i + 1, j):
+                return True
 
-            memo[key] = False
+            if j < n and s2[j] == s3[k] and dfs(i, j + 1):
+                return True
+
+            memo[(i, j)] = False
             return False
 
+        return dfs(0, 0)
 
-        return interleaving(s1, s2, s3)
 ```
-<br>
 
-### Editorial's Approach 2: Recursion with memoization Code
 
-- [Submission](https://leetcode.com/problems/interleaving-string/submissions/1593637163/) (To compare the execution time and memory usage)
-- TC: $O(n \cdot m)$
-- SC: $O(n \cdot m + (n + m))$ ($n + m$ for the recursion stack)
+## Bottom-Up
 
-In the above codes and in `04_01_2025.py`, I used python slicing operations, and defined the parameter as the string itself for the recursive function. However, in the below code, indices are passed as the argument and they are directly used as a key for a dictionary for caching. This improves the time and space complexity since additional memory and slicing operations (looping over characters on the given string) are not needed.
+### Using 2D DP Array
+
+`dp[i][j]` means whether `s1[:i]` and `s2[:j]` can form `s3[:i+j]`. Build the table from smaller prefixes to larger prefixes.
+
+
+cf.) [08_22_2026.py](./08_22_2026.py) also follows this approach.
+
+
+[Submission](https://leetcode.com/problems/interleaving-string/submissions/2116890572/)—Runtime: 58 ms (beats 21.20%), Memory: 19.32 MB (beats 72.52%)
+
+- TC: $O(m*n)$, where $m$ and $n$ are the lengths of $s1$ and $s2$, respectively.
+- SC: $O(m*n)$
 
 
 ```python
 class Solution:
-    def is_Interleave(
-        self, s1: str, i: int, s2: str, j: int, s3: str, k: int, memo: list
-    ) -> bool:
-        if i == len(s1):
-            return s2[j:] == s3[k:]
-        if j == len(s2):
-            return s1[i:] == s3[k:]
-        if memo[i][j] >= 0:
-            return memo[i][j] == 1
-        ans = False
-        if (
-            s3[k] == s1[i]
-            and self.is_Interleave(s1, i + 1, s2, j, s3, k + 1, memo)
-            or s3[k] == s2[j]
-            and self.is_Interleave(s1, i, s2, j + 1, s3, k + 1, memo)
-        ):
-            ans = True
-        memo[i][j] = 1 if ans else 0
-        return ans
-
     def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
-        if len(s1) + len(s2) != len(s3):
+        m, n = len(s1), len(s2)
+
+        if m + n != len(s3):
             return False
-        memo = [[-1] * len(s2) for _ in range(len(s1))]
-        return self.is_Interleave(s1, 0, s2, 0, s3, 0, memo)
+
+        dp = [[False] * (n + 1) for _ in range(m + 1)]
+        dp[0][0] = True
+
+        for i in range(m + 1):
+            for j in range(n + 1):
+                if i == 0 and j == 0:
+                    continue
+
+                from_s1 = i > 0 and dp[i - 1][j] and s1[i - 1] == s3[i + j - 1]
+                from_s2 = j > 0 and dp[i][j - 1] and s2[j - 1] == s3[i + j - 1]
+
+                dp[i][j] = from_s1 or from_s2
+
+        return dp[m][n]
 
 ```
+
+
+### Using 1D DP Array (Solves the Follow-Up Question)
+
+Same idea as the 2D DP approach, but reuse one row because each state only depends on the current and previous row values. This reduces the space complexity from `O(m*n)` to `O(n)`.
+
+
+[Submission](https://leetcode.com/problems/interleaving-string/submissions/2116893041/)—Runtime: 54 ms (beats 41.15%), Memory: 19.14 MB (beats 98.53%)
+
+- TC: $O(m*n)$, where $m$ and $n$ are the lengths of $s1$ and $s2$, respectively.
+- SC: $O(m*n)$
+
+
+```python
+class Solution:
+    def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
+        m, n = len(s1), len(s2)
+
+        if m + n != len(s3):
+            return False
+
+        dp = [False] * (n + 1)
+        dp[0] = True
+
+        # Use only s2
+        for j in range(1, n + 1):
+            dp[j] = dp[j - 1] and s2[j - 1] == s3[j - 1]
+
+        for i in range(1, m + 1):
+            # Use only s1
+            dp[0] = dp[0] and s1[i - 1] == s3[i - 1]
+
+            for j in range(1, n + 1):
+                k = i + j - 1
+
+                from_s1 = dp[j] and s1[i - 1] == s3[k]
+                from_s2 = dp[j - 1] and s2[j - 1] == s3[k]
+
+                dp[j] = from_s1 or from_s2
+
+        return dp[n]
+
+```
+
