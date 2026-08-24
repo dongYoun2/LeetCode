@@ -1,5 +1,6 @@
 # submission: https://leetcode.com/problems/palindrome-linked-list/submissions/1456429642/
-# runtime: 19 ms, memory: 38.29 MB
+# runtime: 19 ms (beats 88.17%), memory: 38.29 MB (beats 97.13%)
+# Array-Based Palindrome Check
 
 # TC: O(n), where n is the number of nodes in the linked list
 # SC: O(n) (for the `arr` list)
@@ -7,7 +8,7 @@
 
 # From LeetCode Top Interview 150 - Linked List
 
-# i feel like this is the most straightforward approach. we simply store the values in the array, and then check if the array is the same as the reversed array. this requires multiple passes.
+# i feel like this is the most straightforward approach. we simply store the values in the array, and then check if the array is the same as the reversed array. this requires multiple passes. however, of course using array in the linked list problem is not the purpose of the topic.
 
 
 # Definition for singly-linked list.
