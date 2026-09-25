@@ -6,7 +6,7 @@
 
 The code below is the refactored version of the `09_29_2025.py` solution, and the logic is the same as the Editorial's Approach 1.
 
-- [Submission](https://leetcode.com/problems/subtree-of-another-tree/submissions/1786587093/) (Runtime: 42 ms, Memory: 18.01 MB)
+- [Submission](https://leetcode.com/problems/subtree-of-another-tree/submissions/1786587093/)—Runtime: 42 ms (beats 46.97%), Memory: 18.01 MB (beats 100.00%)
 - TC: $O(m * n)$, where $m$ and $n$ are the number of nodes in the two trees.
 - SC: $O(h_1 + h_2)$, where $h_1$ and $h_2$ are the heights of the two trees.
   - balanced case: $h_1 = log(m)$, $h_2 = log(n)$
@@ -53,15 +53,14 @@ We have learned during the Data Structures course that two trees are the same if
 So I converted `subRoot` and `root`'s pre-order and in-order traversls into strings, and checked if `subRoot` string of each traversal is a substring of corresponding `root` string. However, this solution doesn't work here because **different shapes/values can collide as substrings**.
 
 **There are two things to be aware of**:
-1. Null nodes should also be included in the string representation. In words, we need a marker for null nodes (`$` is used in the code below).
-  - If we don't count null nodes, `root = [4, 1, 2]` and `subRoot = [2]` case will be the counter-example.
+1. Null nodes should also be included in the string representation. In words, we need a marker for null nodes; `$` is used in the code below. (If we don't count null nodes, `root = [4, 1, 2]` and `subRoot = [2]` case will be the counter-example.)
 2. Separator is needed to distinguish different nodes (or values) since we are converting integers into strings (`^` is used in the code below).
 
 
 cf.) This solution is the same as the Editorial's Approach 2.
 
 
-- [Submission](https://leetcode.com/problems/subtree-of-another-tree/submissions/1786598273/) (Runtime: 10 ms, Memory: 18.17 MB)
+- [Submission](https://leetcode.com/problems/subtree-of-another-tree/submissions/1786598273/)—Runtime: 10 ms (beats 95.82%), Memory: 18.17 MB (beats 100.00%)
 - TC: $O(m + n)$, where $m$ and $n$ are the number of nodes in the two trees.
 - SC: $O(h_1 + h_2)$ (same as the `using DFS` solution)
 

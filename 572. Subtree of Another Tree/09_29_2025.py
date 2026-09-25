@@ -1,7 +1,8 @@
 # submission: https://leetcode.com/problems/subtree-of-another-tree/submissions/1785913006/
-# runtime: 45 ms, memory: 18.1 MB
-
+# runtime: 45 ms (beats 28.93%), memory: 18.1 MB (beats 100.00%)
 # 20 min
+# solved using DFS (recursive)
+
 # TC: O(m * n), where m and n are the number of nodes in the two trees.
 # SC: O(m + n) (worst case)
 
